@@ -15,7 +15,7 @@ int main() {
 }
 
 // https://www.codewars.com/kata/554b4ac871d6813a03000035/train/c
-/* int countIntegers(const char *str) {
+int countIntegers(const char *str) {
   int count = 0;
   int isDigit = 0;
 
@@ -34,7 +34,6 @@ int main() {
 }
 
 void high_and_low(const char *strnum, char *result) {
-  // print your answer to result
   int len = countIntegers(strnum);
   int numArr[len];
 
@@ -65,13 +64,13 @@ int main() {
   high_and_low(a, res);
 
   return 0;
-} */
+}
 
 // do_test("8 3 -5 42 -1 0 0 -9 4 7 4 -4", "42 -9");
 //	do_test("1 2 3", "3 1");
 
 // https://www.codewars.com/kata/5842df8ccbd22792a4000245
-/* char *expandedForm(char *string, unsigned long long n) {
+char *expandedForm(char *string, unsigned long long n) {
   char temp[100];
   sprintf(temp, "%llu", n);
 
@@ -106,10 +105,10 @@ int main() {
   free(decomposition);
 
   return 0;
-} */
+}
 
 // https://www.codewars.com/kata/62ad72443809a4006998218a
-/* enum button { NOTHING, LIKE, DISLIKE };
+enum button { NOTHING, LIKE, DISLIKE };
 enum button like_or_dislike(size_t n, const enum button events[n]) {
   if (n < 2) {
     return n == 0 ? NOTHING : events[0];
@@ -134,11 +133,11 @@ int main() {
   enum button result = like_or_dislike(3, a);
   printf("Result: %d\n", result);
   return 0;
-} */
+}
 
 // https://www.codewars.com/kata/54f9173aa58bce9031001548 DONT KNOW WHY THIS IS
 // WRONG
-/* typedef bool (*predicate)(int);
+typedef bool (*predicate)(int);
 int *take_while(size_t len_in, const int array[len_in], predicate p,
                 size_t *len_out) {
   int tr = 0;
@@ -188,10 +187,10 @@ int main() {
   printf("\n");
   free(result);
   return 0;
-} */
+}
 
 // https://www.codewars.com/kata/52fba2a9adcd10b34300094c/solutions/c
-/* void transpose_matrix(size_t rows, size_t cols, const int matrix[rows][cols],
+void transpose_matrix(size_t rows, size_t cols, const int matrix[rows][cols],
                       int transpose[cols][rows]) {
 
   for (size_t i = 0; i < cols; i++) {
@@ -213,10 +212,10 @@ int main() {
   int m[2][3] = {{1, 2, 3}, {4, 5, 6}};
   transpose_matrix(2, 3, m, t);
   return 0;
-} */
+}
 
 // https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/solutions/c
-/* int **multiplication_table(int n) {
+int **multiplication_table(int n) {
   int **table = malloc(sizeof(int *) * n);
   for (int i = 0; i < n; i++) {
     table[i] = malloc(sizeof(int) * n);
@@ -234,10 +233,10 @@ int main() {
   system("cls");
   multiplication_table(4);
   return 0;
-} */
+}
 
 // https://www.codewars.com/kata/541c8630095125aba6000c00/c
-/* int digital_root(int n) {
+int digital_root(int n) {
   int n1 = n;
 
   while (n1 > 9) {
@@ -263,10 +262,10 @@ int main() {
   system("cls");
   digital_root(132189);
   return 0;
-} */
+}
 
 // https://www.codewars.com/kata/6071ef9cbe6ec400228d9531/c
-/* char *dot_calculator(const char *expression) {
+char *dot_calculator(const char *expression) {
   int expLength = strlen(expression);
   char signal;
   int expLeft = 0;
@@ -314,26 +313,10 @@ int main() {
   char arr[] = {"..... * ......"};
   dot_calculator(arr);
   return 0;
-} */
+}
 
-/* int speed_limit(unsigned speed, size_t length, const unsigned
-
-signals[length]) { int i; int fine = 0; int dif; for (i = 0; i < length;
-i++) { dif = speed - signals[i]; if (dif >= 10 && dif <= 19) { printf("\n
-dif %d, fine 100", dif); fine += 100; } else if (dif >= 20 && dif <= 29) {
-      printf("\n dif %d, fine 250", dif);
-      fine += 250;
-    } else if (dif >= 30) {
-      printf("\n dif %d, fine 500", dif);
-      fine += 500;
-    } else {
-      //
-    }
-  }
-  return fine;
-} */
-
-/* bool *newOne(bool *arr, int len) {
+// https://www.codewars.com/kata/5901555b63bf404a66000029 //INCOMPLETE
+bool *newOne(bool *arr, int len) {
   bool *newArr = malloc(sizeof(bool) * len);
   bool temp = arr[len - 1];
 
@@ -376,13 +359,15 @@ int main() {
 
   free(result);
   return 0;
-} */
+}
 
-/* char *maskify(char *masked, const char *string) {
+//
+char *maskify(char *masked, const char *string) {
   //*masked = '\0'; // write to masked
   int strSize = strlen(masked);
   char lastFour[4] = {};
   int lastFourIndex = 0;
+
   for (int i = strSize - 4; i < strSize; i++) {
     lastFour[lastFourIndex] = masked[i];
     lastFourIndex++;
@@ -404,9 +389,11 @@ int main() {
   maskify(masked, "09");
   printf("%s", masked);
   return 0;
-} */
+}
 
-/* unsigned real_numbers(unsigned n) {
+//
+
+unsigned real_numbers(unsigned n) {
   int nn = n;
   int *arr = malloc(nn * sizeof(int));
   for (int i = 1; i <= nn; i++) {
@@ -422,16 +409,16 @@ int main() {
   // printf("\n%d", cnt);
   free(arr);
   return cnt;
-  //  <----  hajime!
 }
 int main() {
   system("cls");
   unsigned showw = real_numbers(66);
   printf("%d", showw);
   return 0;
-} */
+}
 
-/* void remove_parentheses(const char *str_in, char *str_out) {
+// https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8 //INCOMPLETE
+void remove_parentheses(const char *str_in, char *str_out) {
   int strSize = strlen(str_in);
   char *sArr = calloc(strSize + 1, sizeof(char));
   for (int f = 0; f < strSize; f++) {
@@ -493,10 +480,9 @@ int main() {
   remove_parentheses("example(unwanted thing)example", "exampleexample");
   return 0;
 }
- */
 
 // https://www.codewars.com/kata/536c6b8749aa8b3c2600029a/c
-/* char *sort_string(const char *string, const char *ordering) {
+char *sort_string(const char *string, const char *ordering) {
   int sOrdSize = strlen(ordering);
   int sInSize = strlen(string);
   char *ordered = malloc(sInSize + 1 * sizeof(int));
@@ -561,10 +547,10 @@ int main() {
   printf("%s\n", sorted_string);
   free(sorted_string);
   return 0;
-} */
+}
 
 // https://www.codewars.com/kata/52597aa56021e91c93000cb0
-/* void move_zeros(size_t len, int arr[len]) {
+void move_zeros(size_t len, int arr[len]) {
   // mutate arr in place
   int lenn = len;
   int times = 0;
@@ -591,6 +577,7 @@ int main() {
 }
 int main() {
   system("cls");
-  int array[20] = {9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0,
-9}; move_zeros(20, array); return 0;
-} */
+  int array[20] = {9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9};
+  move_zeros(20, array);
+  return 0;
+}

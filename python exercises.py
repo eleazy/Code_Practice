@@ -10,15 +10,15 @@ import re
 import urllib
 
 """ https://www.codewars.com/kata/59031db02b0070a923000110/ """
-""" f = lambda n, s: [max(i, key=i.count) for i in zip(*s)]
+f = lambda n, s: [max(i, key=i.count) for i in zip(*s)]
 os.system("cls")
 a = [[1, 0, 1, 0, 1], [1, 0, 1, 0, 1], [0, 1, 0, 1, 0]]
 
-print(f(3, a)) """
+print(f(3, a))
 
 
 """ https: // www.codewars.com/kata/575fa9afee048b293e000287/python """
-""" def how_much_water(water, load, clothes):
+def how_much_water(water, load, clothes):
     if clothes < load:
         return "Not enough clothes"
     if clothes == load:
@@ -30,11 +30,11 @@ print(f(3, a)) """
     return round((water * n), 2)
 
 os.system("cls")
-print(how_much_water(10, 11, 20)) """
+print(how_much_water(10, 11, 20))
 
 
 """ https://www.codewars.com/kata/599febdc3f64cd21d8000117 """
-""" def numbers_of_letters(n):
+def numbers_of_letters(n):
     if n == 4:
         return ["four"]
     numWord = {
@@ -66,4 +66,4 @@ print(how_much_water(10, 11, 20)) """
     return numPhraseArr
 
 os.system("cls")
-print(numbers_of_letters(999)) """
+print(numbers_of_letters(999))
