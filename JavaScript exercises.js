@@ -1,5 +1,5 @@
 
-/* let isPalindrome = (x) => {
+let isPalindrome = (x) => {
   let Palin = false;
   let xIn
   for (let i = x.length - 1; i >= 0; i--) {
@@ -11,452 +11,453 @@
   //console.log(xIn)
   return Palin;
 };
-console.log(isPalindrome('010')); */
+console.log(isPalindrome('010'));
 
 // LEETCODE LENGTH OF LAST WORD OS THE STRING EXERCISE
-/* let lengthOfLastWord = (phrase) =>{
-   let wordLength;
-   let arrray;
-   let index = 2
-   arrray = phrase.split(" ");
+let lengthOfLastWord = (phrase) => {
+  let wordLength;
+  let arrray;
+  let index = 2
+  arrray = phrase.split(" ");
 
-   lastWord = arrray[arrray.length - 1]
-   while (lastWord.length == 0){
-      lastWord = arrray[arrray.length - index]
-      index++
-      console.log(lastWord)
-      console.log(index)
-   }
-   wordLength =  lastWord.length
+  lastWord = arrray[arrray.length - 1]
+  while (lastWord.length == 0) {
+    lastWord = arrray[arrray.length - index]
+    index++
+    console.log(lastWord)
+    console.log(index)
+  }
+  wordLength = lastWord.length
 
-return wordLength;
+  return wordLength;
 }
-console.log(lengthOfLastWord("One's mind can do a lot of self damage  ")) */
+console.log(lengthOfLastWord("One's mind can do a lot of self damage  "))
 
 // LEETCODE ROMAN NUMBER STRING TO INT EXERCISE
-/* function romanToInt(s) {
-   let sF = s.toUpperCase();
-   const conversion = {
-     "I": 1,
-     "V": 5,
-     "X": 10,
-     "L": 50,
-     "C": 100,
-     "D": 500,
-     "M": 1000
-   };
-   let result = 0;
-   for (let i = 0; i < sF.length; i++) {
-     if (conversion[sF[i]] < conversion[sF[i+1]]) {
-       result -= conversion[sF[i]];
-     } else {
-       result += conversion[sF[i]];
-     }
-   }
-   return result;
- }
- console.log(romanToInt("XxVI")) */
+function romanToInt(s) {
+  let sF = s.toUpperCase();
+  const conversion = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+  };
+  let result = 0;
+  for (let i = 0; i < sF.length; i++) {
+    if (conversion[sF[i]] < conversion[sF[i + 1]]) {
+      result -= conversion[sF[i]];
+    } else {
+      result += conversion[sF[i]];
+    }
+  }
+  return result;
+}
+console.log(romanToInt("XxVI"))
 
-/*  let twoSum = (nums, target) =>{
-   let result = [];
+let twoSum = (nums, target) => {
+  let result = [];
 
-   for (let i = 0; i < nums.length-2; i++) {
-      for (let j = 0; j < nums.length-1; j++) {
-         if (nums[i]+nums[j]==target) {
-            result[0] = i;
-            result[1] = j;
-         }
-
+  for (let i = 0; i < nums.length - 2; i++) {
+    for (let j = 0; j < nums.length - 1; j++) {
+      if (nums[i] + nums[j] == target) {
+        result[0] = i;
+        result[1] = j;
       }
-   }
 
-   console.log(result)
+    }
+  }
 
-   return result;
- };
- twoSum([1,2,3,4,5,6],9) */
+  console.log(result)
+
+  return result;
+};
+twoSum([1, 2, 3, 4, 5, 6], 9)
 
 //REVERSE STRING EXERCISE
-/*  function solution(str){
-   let rvs ="";
-   for (let i=str.length; i>=0; i--){
-     rvs += str[i];
-   }
-   console.log(rvs)
- }
- solution("unlock"); */
+function solution(str) {
+  let rvs = "";
+  for (let i = str.length; i >= 0; i--) {
+    rvs += str[i];
+  }
+  console.log(rvs)
+}
+solution("unlock");
 
-/*  function solutiion(str){
-   let rvs;
-   rvs = str.split("");
-   rvs.reverse();
-   let final = rvs.join("");
-   console.log(final)
-   return final;
- }
- solutiion("unlock"); */
+function solutiion(str) {
+  let rvs;
+  rvs = str.split("");
+  rvs.reverse();
+  let final = rvs.join("");
+  console.log(final)
+  return final;
+}
+solutiion("unlock");
 
 //PERSISTENT BUGGER EXERCISE. HOW MANY MULTIPLICATIONS BEFORE SINGLE DIGIT NUMBER IS LEFT
-/*  function persistence(num) {
+function persistence(num) {
   let mTimes = 0;
   let numArray = [];
   let numMul;
 
-  if (num <=9) {
+  if (num <= 9) {
     return mTimes;
   }
-    numArray = Array.from(String(num), Number);
-    console.log(numArray);
-    numMul = numArray[0];
+  numArray = Array.from(String(num), Number);
+  console.log(numArray);
+  numMul = numArray[0];
 
-    for (let i = 0; i <= numArray.length-2; i++) {
-      numMul = numMul * numArray[i+1];
-    }
-    console.log(numMul);
-    mTimes ++;
-    if (numMul ==0) {
-      return mTimes;
-    }
+  for (let i = 0; i <= numArray.length - 2; i++) {
+    numMul = numMul * numArray[i + 1];
+  }
+  console.log(numMul);
+  mTimes++;
+  if (numMul == 0) {
+    return mTimes;
+  }
   do {
     numArray = Array.from(String(numMul), Number);
     console.log(numArray);
     numMul = numArray[0];
 
-    for (let i = 0; i <= numArray.length-2; i++) {
-      numMul = numMul * numArray[i+1];
+    for (let i = 0; i <= numArray.length - 2; i++) {
+      numMul = numMul * numArray[i + 1];
     }
-  console.log(numMul);
-  mTimes ++;
-  } while (numMul>9);
+    console.log(numMul);
+    mTimes++;
+  } while (numMul > 9);
 
   console.log(mTimes);
   return mTimes;
 }
-persistence(6665795940); */
+persistence(6665795940);
 
 //ARRAY TRUE VALUE COUNTER EXERCISE
-/* function countSheeps(arrayOfSheep) {
+function countSheeps(arrayOfSheep) {
   // TODO May the force be with you
-  let arr  = arrayOfSheep.filter(x=>x==true);
+  let arr = arrayOfSheep.filter(x => x == true);
   console.log(arr.length)
   return arr.length;
 }
 
-let array1 = [true,  true,  true,  false,
-  true,  true,  true,  true ,
-  true,  false, true,  false,
-  true,  false, false, true ,
-  true,  true,  true,  true ,
-  false, false, true,  true ];
-countSheeps(array1) */
+let array1 = [true, true, true, false,
+  true, true, true, true,
+  true, false, true, false,
+  true, false, false, true,
+  true, true, true, true,
+  false, false, true, true];
+countSheeps(array1)
 
 //VOWALS COUNTER EXERCISE
-/* function getCount(str) {
-  counter=0;
-  let vowals = ["a","e","i","u","o"]
+function getCount(str) {
+  counter = 0;
+  let vowals = ["a", "e", "i", "u", "o"]
   let stringg = Array.from(String(str), String);
   console.log(stringg)
 
   for (let i = 0; i < stringg.length; i++) {
     for (let j = 0; j < vowals.length; j++) {
-     if (stringg[i]==vowals[j]) {
-      counter ++;}
+      if (stringg[i] == vowals[j]) {
+        counter++;
+      }
     }
   }
   console.log(counter)
   return counter;
 }
-getCount("kura kura"); */
+getCount("kura kura");
 
 //SMALLEST NUMBER FINDER EXERCISE
-/* function findSmallestInt(args) {
-  let lesser =args[0];
-for (let i = 0; i < args.length; i++) {
-  if (args[i]<lesser) {
-     lesser = args[i]
+function findSmallestInt(args) {
+  let lesser = args[0];
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] < lesser) {
+      lesser = args[i]
+    }
   }
-}
   //console.log(lesser)
- return lesser
+  return lesser
 }
-findSmallestInt([78,56,232,12,0]) */
+findSmallestInt([78, 56, 232, 12, 0])
 
 //STAIR STEPS COUNTER BUT WHILE LOOP BREAKS MY WEB BROWSERS
-/* function solution(start, finish) {
+function solution(start, finish) {
   //Mew
   let counter
   do {
-    start +2
+    start + 2
     counter++
-  } while (start<finish);
+  } while (start < finish);
 
-console.log(start)
+  console.log(start)
 }
-solution(1,7);  */
+solution(1, 7);
 
 //SELECTIVE ARRAY REVERSE EXERCISE, REVERSES A GRUP OS N ELEMENTS OF A GIVEN ARRAY
-/* function selReverse(array, length) {
+function selReverse(array, length) {
   // TODO
   let rvsArray = [];
   let tempArray = [];
   let strinArrays = [];
 
-  if (length==0) {
+  if (length == 0) {
     return array;
   }
 
   for (let i = 0; i < array.length; i += length) {
-      tempArray = array.slice(i, i + length);
-      strinArrays.push(tempArray.reverse().join(", "));
+    tempArray = array.slice(i, i + length);
+    strinArrays.push(tempArray.reverse().join(", "));
   }
   rvsArray[0] = strinArrays.join(", ");
 
   console.log(strinArrays)
   console.log(rvsArray)
- return rvsArray;
+  return rvsArray;
 }
-selReverse([2,4,6,8,10,12,14,16], 3) */
+selReverse([2, 4, 6, 8, 10, 12, 14, 16], 3)
 
 //VERSION CONTROL EXERCICE
-/* class vm {
-  constructor(major=0,minor=0,patch=1){
-     this.history=[];
-     this.version = { major, minor, patch }
+class vm {
+  constructor(major = 0, minor = 0, patch = 1) {
+    this.history = [];
+    this.version = { major, minor, patch }
   }
-  major(){
+  major() {
     this.updateHistory();
-    this.version.major ++;
+    this.version.major++;
     this.version.minor = 0;
     this.version.patch = 0;
     return this;
   }
-  minor(){
+  minor() {
     this.updateHistory();
-    this.version.minor ++;
+    this.version.minor++;
     this.version.patch = 0;
     return this;
   }
-  patch(){
+  patch() {
     this.updateHistory();
-    this.version.patch ++;
+    this.version.patch++;
     return this;
   }
-  rollback(){
-    if(this.history.length==0)  {
-      throw new Error ("Cannot rollback!");
+  rollback() {
+    if (this.history.length == 0) {
+      throw new Error("Cannot rollback!");
     }
-      this.version = this.history[this.history.length - 1];
-      this.history.pop();
-      return this;
+    this.version = this.history[this.history.length - 1];
+    this.history.pop();
+    return this;
   }
-  release(){
-   return `Version: ${this.version.major}, ${this.version.minor}, ${this.version.patch}`
+  release() {
+    return `Version: ${this.version.major}, ${this.version.minor}, ${this.version.patch}`
   }
-  updateHistory(){
-    let {major,minor,patch} = this.version;
-    this.history.push({major,minor,patch})
+  updateHistory() {
+    let { major, minor, patch } = this.version;
+    this.history.push({ major, minor, patch })
   }
 }
-let m1 = new vm(4,4,4)
+let m1 = new vm(4, 4, 4)
 //console.log(m1)
 
-console.log(m1.release()); */
+console.log(m1.release());
 
 //REMOVE FIRST AND LAST CHARACTER
-/* function removeChar(str){
+function removeChar(str) {
   //You got this!
-  return str.slice(1,str.length-1)
- };
- console.log(removeChar("keep on")) */
+  return str.slice(1, str.length - 1)
+};
+console.log(removeChar("keep on"))
 
 //RACE PODIUM EXERCISE
-/* function racePodium(blocks) {
-  let first = Math.ceil(blocks/3)+1;
+function racePodium(blocks) {
+  let first = Math.ceil(blocks / 3) + 1;
   let second = first - 1;
-  let third = blocks-first-second;
+  let third = blocks - first - second;
   if (third == 0) {
     third = 1
     second -= 1
   }
-  return [second,first,third]
+  return [second, first, third]
 }
 console.log(racePodium(11))
- */
+
 
 //FIRST NON REPEATED CHARACTER BUT I CAN'T FIGURE OUT THE UNIQUE letIABLE
-/* function firstNonRepeated(s) {
+function firstNonRepeated(s) {
   // your code here
   let stringg = Array.from(String(s), String);
-  let unique=[];
+  let unique = [];
 
   const getNonDuplicatedValues = (arr) =>
-    arr.filter((item,index) => {
-      arr.splice(index,1)
+    arr.filter((item, index) => {
+      arr.splice(index, 1)
       unique = !arr.includes(item)
-      arr.splice(index,0,item)
+      arr.splice(index, 0, item)
       return unique
-  })
+    })
 
- return getNonDuplicatedValues(stringg)
+  return getNonDuplicatedValues(stringg)
 }
-console.log(firstNonRepeated("test")) */
+console.log(firstNonRepeated("test"))
 
 //FIRST NON REPEATED CHARACTER IN OTHER WAY
-/* function firstNonRepeated(s) {
-    let l = s.length,
-        i, j,
-        unique = [];
+function firstNonRepeated(s) {
+  let l = s.length,
+    i, j,
+    unique = [];
 
-    for (i = 0; i < l; i++) {
-        for (j = 0; j < l; j++) {
-            if (i === j) {
-                continue;
-            }
-            if (s[i] === s[j]) {
-                break;
-            }
-        }
-        if (j === l) {
-            unique.push(s[i]);
-        }
+  for (i = 0; i < l; i++) {
+    for (j = 0; j < l; j++) {
+      if (i === j) {
+        continue;
+      }
+      if (s[i] === s[j]) {
+        break;
+      }
     }
-    if (unique == "") {
-      return null
-    } else{
-       return unique[0];
+    if (j === l) {
+      unique.push(s[i]);
     }
+  }
+  if (unique == "") {
+    return null
+  } else {
+    return unique[0];
+  }
 }
-console.log(firstNonRepeated("test")) */
+console.log(firstNonRepeated("test"))
 
 //SUPER COMPACT WAY THAT SOMEONE CAME UP WITH
 //const firstNonRepeated = s => [...s].find(i => s.indexOf(i) == s.lastIndexOf(i)) || null
 
 //ALTERNATE CAPITALIZATION EXERCISE
-/* function capitalize(s){
-  let ar =[]
+function capitalize(s) {
+  let ar = []
   let arr = [];
   let arrr = []
 
   for (let i = 0; i < s.length; i++) {
-    if (i%2==0) {
+    if (i % 2 == 0) {
       arr.push(s[i].toUpperCase())
-    } else{
+    } else {
       arr.push(s[i])
     }
   }
   for (let i = 0; i < s.length; i++) {
-    if (i%2!=0) {
+    if (i % 2 != 0) {
       ar.push(s[i].toUpperCase())
-    } else{
+    } else {
       ar.push(s[i])
     }
   }
 
- arrr[0]=arr.join("")
- arrr[1]=ar.join("")
+  arrr[0] = arr.join("")
+  arrr[1] = ar.join("")
   return arrr;
 };
-console.log(capitalize("codewars")) */
+console.log(capitalize("codewars"))
 
 // COMBINATIONS FUNCTION THAT CAN BE USEFUL LATER
-/* function combinations(str) {
-    let fn = function(active, rest, a) {
-        if (!active && !rest)
-            return;
-        if (!rest) {
-            a.push(active);
-        } else {
-            fn(active + rest[0], rest.slice(1), a);
-            fn(active, rest.slice(1), a);
-        }
-        return a.join(", ");
+function combinations(str) {
+  let fn = function (active, rest, a) {
+    if (!active && !rest)
+      return;
+    if (!rest) {
+      a.push(active);
+    } else {
+      fn(active + rest[0], rest.slice(1), a);
+      fn(active, rest.slice(1), a);
     }
-    return fn("", str, []);
+    return a.join(", ");
+  }
+  return fn("", str, []);
 }
 console.log(combinations("12543"))
- */
+
 
 //REVERSE WORDS EXERCISE
-/* function reverseWords(str) {
+function reverseWords(str) {
   // Go for it
   let strr;
- str = str.split("")
+  str = str.split("")
 
- str = str.reverse()
+  str = str.reverse()
 
- str = str.join("")
+  str = str.join("")
 
- str = str.split(" ")
+  str = str.split(" ")
 
   str = str.reverse()
 
   strr = str.join(" ")
 
- return strr
+  return strr
 }
 console.log(reverseWords("This is an example!"))
- */
+
 
 //CENTURY EXERCISE
-/* function century(year) {
+function century(year) {
   // Finish this :)
   let cntr;
-  if (year%100==0) {
-    cntr = year/100
+  if (year % 100 == 0) {
+    cntr = year / 100
   } else {
-    cntr = Math.ceil(year/100)
+    cntr = Math.ceil(year / 100)
   }
   return cntr;
 }
-console.log(century(2023)) */
+console.log(century(2023))
 
 //SUM THE TWO LOWEST NON-FLOAT NON-NEGATIVE NUMBERS OF AN ARRAY
-/* function sumTwoSmallestNumbers(numbers) {
+function sumTwoSmallestNumbers(numbers) {
   //Code here
-  let iss = (n) =>{
+  let iss = (n) => {
     return n > 0 && n % 1 == 0
   }
-  numbers=numbers.filter(iss)
-  numbers=numbers.sort((a,b)=>a-b)
+  numbers = numbers.filter(iss)
+  numbers = numbers.sort((a, b) => a - b)
 
-  return numbers[0]+numbers[1]
+  return numbers[0] + numbers[1]
 }
-console.log(sumTwoSmallestNumbers([5,-3,0,1,3.7, 8, 12, 19, 22])) */
+console.log(sumTwoSmallestNumbers([5, -3, 0, 1, 3.7, 8, 12, 19, 22]))
 
 //COUNTS THE NUMBER OF GIVEN CHARACTERS EXERCISE
-/* function printerError(s) {
-    // your code
-    let sss =s.split('')
-    let ss = s.split('').filter(char => /[a-mA-M]/.test(char));
-    let errorN = sss.length - ss.length
-    return `${errorN}/${s.length}`
+function printerError(s) {
+  // your code
+  let sss = s.split('')
+  let ss = s.split('').filter(char => /[a-mA-M]/.test(char));
+  let errorN = sss.length - ss.length
+  return `${errorN}/${s.length}`
 }
 console.log(printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"))
 
- */
+
 
 //VERIFYS IS TWO ARRAYS ARE SIMILAR, HAVING THE SAME VALUES OCURRING THE SAME AMOUNT OF TIMES
-/* function arraysSimilar(arr1, arr2) {
+function arraysSimilar(arr1, arr2) {
   // TODO: Implement your arraysSimilar
   arr1 = arr1.sort()
   arr2 = arr2.sort()
   let same = 0
   for (const each in arr1) {
     if (arr1[each] === arr2[each]) {
-        same ++;
+      same++;
     }
   }
-  if ((same==arr1.length)&&(arr1.length==arr2.length))  {
+  if ((same == arr1.length) && (arr1.length == arr2.length)) {
     return true
   }
   return false
 }
- */
+
 
 //COUNTS THE NUMBERS OF PAIRS BY COLORS IN A GIVEN ARRAY OF GLOVES
-/* function numberOfPairs(gloves) {
+function numberOfPairs(gloves) {
   //My hands are freezing
-  let counter=0
+  let counter = 0
   let tArr
   const counts = {};
 
@@ -469,32 +470,32 @@ console.log(printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmx
   for (let i = 0; i < tArr.length; i++) {
     counter += Math.floor(counts[tArr[i]] / 2)
   }
-    return counter
-  }
-inp2 = ['gray','black','purple','purple','purple','gray','black','red','pink']
-console.log(numberOfPairs(inp2)) */
+  return counter
+}
+inp2 = ['gray', 'black', 'purple', 'purple', 'purple', 'gray', 'black', 'red', 'pink']
+console.log(numberOfPairs(inp2))
 
 //COUNTS THE ZEROS AT END OS N!!, INCOMPLETE EXERCISE, BREAKS WITH INFINITY NUMBERS
-/* function countZeros(n) {
+function countZeros(n) {
   let fct = 1
   let arr = []
   let arrT = []
-  let counter=0
-  let sum=0
+  let counter = 0
+  let sum = 0
 
-  if (n%2==0) {
-    let i=0
-    while (i<n) {
+  if (n % 2 == 0) {
+    let i = 0
+    while (i < n) {
       i++
-      if (i%2==0) {
+      if (i % 2 == 0) {
         fct *= i
       }
     }
-  }else{
-    let i=1
-    while (i<n) {
+  } else {
+    let i = 1
+    while (i < n) {
       i++
-      if (i%2!=0) {
+      if (i % 2 != 0) {
         fct *= i
       }
     }
@@ -505,29 +506,29 @@ console.log(numberOfPairs(inp2)) */
   //arr = arr.slice(arr.length-arr.length/10000,arr.length)
   console.log(arr)
 
-  for (let j = 1; j <=arr.length ; j++) {
-    arrT = arr.slice(arr.length-j,arr.length)
+  for (let j = 1; j <= arr.length; j++) {
+    arrT = arr.slice(arr.length - j, arr.length)
     for (let g = 0; g < arrT.length; g++) {
-      sum +=arrT[g]
-      if (sum==0) {
+      sum += arrT[g]
+      if (sum == 0) {
         counter = arrT.length
         break;
       }
     }
   }
- return counter;
+  return counter;
 }
-console.log(countZeros(222)); */
+console.log(countZeros(222));
 
 //VERIFYS IF THE NUMBER IS NARCISSISTIC
-/* function narcissistic(value) {
+function narcissistic(value) {
   // Code me to return true or false
-  let arr =[]
-  let rise=1
-  let risee=[]
-  let sum =0
+  let arr = []
+  let rise = 1
+  let risee = []
+  let sum = 0
 
-  if (value<10) {
+  if (value < 10) {
     return true;
   }
 
@@ -536,104 +537,104 @@ console.log(countZeros(222)); */
     for (let i = 0; i < arr.length; i++) {
       rise *= arr[j]
     }
-    risee[j]=rise
-    rise=1
+    risee[j] = rise
+    rise = 1
   }
- //console.log(risee)
- for (let g = 0; g < risee.length; g++) {
-  sum +=risee[g]
- }
-  return sum==value
+  //console.log(risee)
+  for (let g = 0; g < risee.length; g++) {
+    sum += risee[g]
+  }
+  return sum == value
 }
-console.log(narcissistic(163)) */
+console.log(narcissistic(163))
 
 //CALCULATE RANGE, AVERAGE AND MEDIAN OF TIMES
 //https://www.codewars.com/kata/55b3425df71c1201a800009c
-/* function stat(strg) {
-   // your code
-   if (!strg) {
-      return ""
-   }
+function stat(strg) {
+  // your code
+  if (!strg) {
+    return ""
+  }
 
-    function conv (n) {
-      let sec_num = parseInt(n, 10); // don't forget the second param
-      let hours   = Math.floor(sec_num / 3600);
-      let minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-      let seconds = sec_num - (hours * 3600) - (minutes * 60);
+  function conv(n) {
+    let sec_num = parseInt(n, 10); // don't forget the second param
+    let hours = Math.floor(sec_num / 3600);
+    let minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    let seconds = sec_num - (hours * 3600) - (minutes * 60);
 
-      if (hours   < 10) {hours   = "0"+hours;}
-      if (minutes < 10) {minutes = "0"+minutes;}
-      if (seconds < 10) {seconds = "0"+seconds;}
-      return hours+'|'+minutes+'|'+seconds;
-    }
-    function median(values){
-      if(values.length ===0) throw new Error("No inputs");
-      values.sort(function(a,b){
-        return a-b;
-      });
-      let half = Math.floor(values.length / 2);
-      if (values.length % 2)
-        return values[half];
-      return (values[half - 1] + values[half]) / 2.0;
-    }
+    if (hours < 10) { hours = "0" + hours; }
+    if (minutes < 10) { minutes = "0" + minutes; }
+    if (seconds < 10) { seconds = "0" + seconds; }
+    return hours + '|' + minutes + '|' + seconds;
+  }
+  function median(values) {
+    if (values.length === 0) throw new Error("No inputs");
+    values.sort(function (a, b) {
+      return a - b;
+    });
+    let half = Math.floor(values.length / 2);
+    if (values.length % 2)
+      return values[half];
+    return (values[half - 1] + values[half]) / 2.0;
+  }
 
-    let arr=[]
-    let timeSc=[]
+  let arr = []
+  let timeSc = []
 
   strg = strg.split(",")
   for (let i = 0; i < strg.length; i++) {
-   arr[i]=strg[i].split("|")
+    arr[i] = strg[i].split("|")
     for (let t = 0; t < 3; t++) {
       arr[i][t] = Number(arr[i][t])
     }
   }
 
   for (let j = 0; j < arr.length; j++) {
-    timeSc[j] = (arr[j][0]*3600)+(arr[j][1]*60)+(arr[j][2])
+    timeSc[j] = (arr[j][0] * 3600) + (arr[j][1] * 60) + (arr[j][2])
   }
 
-  let range = Math.max(...timeSc)-Math.min(...timeSc)
-  let average= (timeSc.reduce((partialSum, a) => partialSum + a, 0))/(timeSc.length)
+  let range = Math.max(...timeSc) - Math.min(...timeSc)
+  let average = (timeSc.reduce((partialSum, a) => partialSum + a, 0)) / (timeSc.length)
 
   return `Range: ${conv(range)} Average: ${conv(average)} Median: ${conv(median(timeSc))}`
 }
 console.log(stat("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17"))
- */
+
 
 //subsetSum([3,9,8,4,5,7,10],15);
 
 //WORKS BUT WITH TIMEOUT
 //https://www.codewars.com/kata/probabilities-for-sums-in-rolling-cubic-dice
-/* function rolldiceSumProb(sum, dice){
-   let sumSets = [];
+function rolldiceSumProb(sum, dice) {
+  let sumSets = [];
 
   function powerset(arr) {
     let ps = [[]];
-    for (let i=0; i < arr.length; i++) {
-        for (let j = 0, len = ps.length; j < len; j++) {
-             ps.push(ps[j].concat(arr[i]));
-        }
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0, len = ps.length; j < len; j++) {
+        ps.push(ps[j].concat(arr[i]));
+      }
     }
     return ps;
   }
 
   function summ(arr) {
-      let total = 0;
-      for (let i = 0; i < arr.length; i++){
-        total += arr[i];
-      }
-      return total
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+      total += arr[i];
+    }
+    return total
   }
 
   function findSums(numbers, targetSum) {
 
     let numberSets = powerset(numbers);
-    for (let i=0; i < numberSets.length; i++) {
-        let numberSet = numberSets[i];
-        if (summ(numberSet) == targetSum)
-          if (numberSet.length==dice) {
-            sumSets.push(numberSet);
-          }
+    for (let i = 0; i < numberSets.length; i++) {
+      let numberSet = numberSets[i];
+      if (summ(numberSet) == targetSum)
+        if (numberSet.length == dice) {
+          sumSets.push(numberSet);
+        }
     }
     sumSets = sumSets.map(JSON.stringify)
     sumSets = [...new Set(sumSets)];
@@ -643,20 +644,20 @@ console.log(stat("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17"))
 
   let prob;
   // your code here
-  let diceCount= []
+  let diceCount = []
 
   for (let i = 0; i < dice; i++) {
     for (let j = 1; j < 7; j++) {
-       diceCount += j
+      diceCount += j
     }
   }
 
   diceCount = diceCount.split("")
-  diceCount= diceCount.map(function (x) {
+  diceCount = diceCount.map(function (x) {
     return parseInt(x, 10);
   });
 
-  findSums(diceCount,sum)
+  findSums(diceCount, sum)
 
   console.log(diceCount)
   console.log(sumSets)
@@ -670,33 +671,33 @@ console.log(stat("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17"))
 
   return prob;
 }
-console.log(rolldiceSumProb(8,4)) */
+console.log(rolldiceSumProb(8, 4))
 
 //https://www.codewars.com/kata/5901555b63bf404a66000029
-/* let newOne = (arr) =>{
+let newOne = (arr) => {
   let temp
-  let newArr=[]
+  let newArr = []
 
-  temp = arr[arr.length-1]
+  temp = arr[arr.length - 1]
 
   for (let i = 0; i < arr.length; i++) {
-    if (temp===1) {
-      if (arr[i]==0) {
-        newArr[i] = arr[i] +1
-      } else{
-        newArr[i] = arr[i] -1
+    if (temp === 1) {
+      if (arr[i] == 0) {
+        newArr[i] = arr[i] + 1
+      } else {
+        newArr[i] = arr[i] - 1
       }
-    }  else{
+    } else {
       newArr[i] = arr[i]
     }
-    temp =  arr[i]
+    temp = arr[i]
   }
   return newArr
 }
 
 function lightBulbs(lights, n) {
   //coding and coding..
-  let final=[]
+  let final = []
   let temp = [...lights]
 
   for (let i = 0; i < n; i++) {
@@ -706,18 +707,18 @@ function lightBulbs(lights, n) {
 
   return final
 }
-console.log(lightBulbs([0, 1, 1, 0, 1, 1], 2)) */
+console.log(lightBulbs([0, 1, 1, 0, 1, 1], 2))
 // [1, 0, 1, 1, 0, 1]
 //https://www.codewars.com/kata/5934d648d95386bc8200010b
-/* function kaCokadekaMe(word) {
+function kaCokadekaMe(word) {
   let kaWord = Array.from(String(word), String);
   let vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']
-  let conso = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w','x', 'y', 'z','B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X','Y', 'Z']
+  let conso = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z']
 
   for (let i = 0; i < kaWord.length; i++) {
-    if (  (vowels.includes(kaWord[i])) ) {
-      if ( (conso.includes(kaWord[i+1])) ) {
-        kaWord.splice(i+1, i-i, 'ka')
+    if ((vowels.includes(kaWord[i]))) {
+      if ((conso.includes(kaWord[i + 1]))) {
+        kaWord.splice(i + 1, i - i, 'ka')
       }
     }
   }
@@ -725,11 +726,11 @@ console.log(lightBulbs([0, 1, 1, 0, 1, 1], 2)) */
   kaWord = kaWord.join("")
   return kaWord;
 }
-console.log(kaCokadekaMe("bexhs")) */
+console.log(kaCokadekaMe("bexhs"))
 
 //https://www.codewars.com/kata/5825792ada030e9601000782/javascript
-/* function zipWith(fn,a0,a1) {
-  let finalArr=[]
+function zipWith(fn, a0, a1) {
+  let finalArr = []
   let lesserLength = Math.min(a0.length, a1.length)
 
   for (let i = 0; i < lesserLength; i++) {
@@ -737,69 +738,69 @@ console.log(kaCokadekaMe("bexhs")) */
   }
   return finalArr
 }
-console.log(zipWith(Math.pow , [10,10,10,10], [0,1,2,3])) */
+console.log(zipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3]))
 
 //https://www.codewars.com/kata/587731fda577b3d1b0001196/javascript
-/* String.prototype.camelCase=function(){
+String.prototype.camelCase = function () {
   //your code here
   let arr = this.split(" ")
   for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].slice(1)
+    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
   }
   return arr.join("")
 }
-console.log("test man case".camelCase()) */
+console.log("test man case".camelCase())
 
 //https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d/javascript
-/* function solution(str, ending){
+function solution(str, ending) {
   // TODO: complete
   let is = false
-  if (ending=='') {
-    is=true
-  }
-  if ((str.includes(ending))&&(ending[ending.length-1]==str[str.length-1])) {
+  if (ending == '') {
     is = true
   }
-  return  is
+  if ((str.includes(ending)) && (ending[ending.length - 1] == str[str.length - 1])) {
+    is = true
+  }
+  return is
 }
-console.log(solution('abcde', 'abc')) */
+console.log(solution('abcde', 'abc'))
 
 //https://www.codewars.com/kata/5821cd4770ca285b1f0001d5/javascript
-/* var snakesAndLadders = function(board, dice) {
+var snakesAndLadders = function (board, dice) {
   // Your code here
-  let position=0
-  let mov=0
+  let position = 0
+  let mov = 0
   console.log(board)
   for (let i = 0; i < dice.length; i++) {
-    console.log("\ni "+i)
-    if  (dice[i] + position < board.length)  {
-      console.log("position "+position)
-      console.log("dice>> "+dice[i])
+    console.log("\ni " + i)
+    if (dice[i] + position < board.length) {
+      console.log("position " + position)
+      console.log("dice>> " + dice[i])
       position += dice[i]
       position += board[position]
       mov = position
-      console.log("board value>> "+ board[mov] +" index "+board.indexOf(board[mov]) )
-      console.log("position "+position)
+      console.log("board value>> " + board[mov] + " index " + board.indexOf(board[mov]))
+      console.log("position " + position)
     }
   }
   return position
 }
-var dice =  []
-var board =[]
+var dice = []
+var board = []
 for (let f = 0; f < 99; f++) {
-  board[f] = Math.floor(Math.random()*99)
-  dice[f] = Math.floor(Math.random()*40)
+  board[f] = Math.floor(Math.random() * 99)
+  dice[f] = Math.floor(Math.random() * 40)
 }
-console.log(snakesAndLadders(board,dice)) */
+console.log(snakesAndLadders(board, dice))
 
 //https://www.codewars.com/kata/57241cafef90082e270012d8
-/* function keywordCipher(string, keyword){
+function keywordCipher(string, keyword) {
   //your code here
   let stringg = Array.from(String(keyword.toLowerCase()), String)
   let noRepeat = []
-  let alph = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-  let finalInd=[]
-  let finalWord=[]
+  let alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  let finalInd = []
+  let finalWord = []
 
   for (let i = 0; i < stringg.length; i++) {
     if (!noRepeat.includes(stringg[i])) {
@@ -814,87 +815,82 @@ console.log(snakesAndLadders(board,dice)) */
   string = string.toLowerCase().split("")
 
   for (let j = 0; j < string.length; j++) {
-    finalInd[j]=alph.indexOf(string[j])
+    finalInd[j] = alph.indexOf(string[j])
   }
   for (let n = 0; n < finalInd.length; n++) {
-  finalWord.push(noRepeat[finalInd[n]])
+    finalWord.push(noRepeat[finalInd[n]])
   }
 
-  finalWord.forEach(function(item, i) { if (item == undefined) finalWord[i] = " "; });
+  finalWord.forEach(function (item, i) { if (item == undefined) finalWord[i] = " "; });
   finalWord = finalWord.join("")
 
   return finalWord
 }
-console.log(keywordCipher("alpha bravo charlie", "delta")) */
+console.log(keywordCipher("alpha bravo charlie", "delta"))
 
 //https://www.codewars.com/kata/57f8ff867a28db569e000c4a/javascript
-/* function kebabize(str) {
-  str = str.replace(/[^a-zA-Z]/g,'')
-  let indexx=[]
+function kebabize(str) {
+  str = str.replace(/[^a-zA-Z]/g, '')
+  let indexx = []
   let strr = Array.from(String(str), String)
-  let final=[]
+  let final = []
 
   for (let i = 0; i < strr.length; i++) {
     if (strr[i].toUpperCase() === strr[i]) {
       indexx.push(i)
     }
   }
-  strr = strr.map(a=> a.toLowerCase())
+  strr = strr.map(a => a.toLowerCase())
 
   for (let g = 0; g < indexx.length; g++) {
-    final[g] = strr.slice(indexx[g],indexx[g+1])
+    final[g] = strr.slice(indexx[g], indexx[g + 1])
   }
 
-  final.unshift(strr.slice(0,indexx[0]))
+  final.unshift(strr.slice(0, indexx[0]))
 
   final = final.join(" ")
   for (let f = 0; f < final.length; f++) {
-    final = final.replace(",","")
-    final = final.replace(" ","-")
+    final = final.replace(",", "")
+    final = final.replace(" ", "-")
   }
 
-  if (final.charAt(0)=="-") {
-    final = final.replace("-","")
+  if (final.charAt(0) == "-") {
+    final = final.replace("-", "")
   }
   return final
 }
-console.log(kebabize("myCamelCasedString")) */
+console.log(kebabize("myCamelCasedString"))
 
 //https://www.codewars.com/kata/55e7280b40e1c4a06d0000aa/javascript
-/* function getCombinations(valuesArray, size)
-{
+function getCombinations(valuesArray, size) {
 
-var combi = [];
-var temp = [];
-var slent = Math.pow(2, valuesArray.length);
+  var combi = [];
+  var temp = [];
+  var slent = Math.pow(2, valuesArray.length);
 
-for (var i = 0; i < slent; i++)
-{
+  for (var i = 0; i < slent; i++) {
     temp = [];
-    for (var j = 0; j < valuesArray.length; j++)
-    {
-        if ((i & Math.pow(2, j)))
-        {
-            temp.push(valuesArray[j]);
-        }
+    for (var j = 0; j < valuesArray.length; j++) {
+      if ((i & Math.pow(2, j))) {
+        temp.push(valuesArray[j]);
+      }
     }
-    if (temp.length > 0)
-    {
-        combi.push(temp);
+    if (temp.length > 0) {
+      combi.push(temp);
     }
-}
+  }
 
-combi = combi.filter(a=>a.length ==size)
-//console.log(combi.join("\n"));
-return combi;
+  combi = combi.filter(a => a.length == size)
+  //console.log(combi.join("\n"));
+  return combi;
 }
 
 function chooseBestSum(t, k, ls) {
-    // your code
+  // your code
   let options = []
   options = getCombinations(ls, k)
   //console.log(options)
-  if (options=="") {
+  if (options == "") {
     return null
   }
   let sum = []
@@ -902,78 +898,78 @@ function chooseBestSum(t, k, ls) {
     sum[i] = options[i].reduce((partialSum, a) => partialSum + a, 0)
   }
   //console.log(sum.sort())
-  let closer = sum.reduce(function(prev, curr) {
+  let closer = sum.reduce(function (prev, curr) {
     return (Math.abs(curr - t) < Math.abs(prev - t) ? curr : prev);
   })
 
-  if (closer>t) {
-    sum.sort((a , b) => a - b )
-    closer = sum[sum.indexOf(closer)-1]
+  if (closer > t) {
+    sum.sort((a, b) => a - b)
+    closer = sum[sum.indexOf(closer) - 1]
   }
   //console.log(closer)
-  if (closer==undefined) {
-    closer=null
+  if (closer == undefined) {
+    closer = null
   }
   return closer
 }
-var ts =  [21,34,87,24,09,45,23,56]
-console.log(chooseBestSum(12, 4, ts)) */
+var ts = [21, 34, 87, 24,09, 45, 23, 56]
+console.log(chooseBestSum(12, 4, ts))
 
 //https://www.codewars.com/kata/5526fc09a1bbd946250002dc/javascript
-/* function findOutlier(integers){
+function findOutlier(integers) {
   //your code here
-  let mod = integers.map(a=>a%2).map(a=>Math.abs(a))
+  let mod = integers.map(a => a % 2).map(a => Math.abs(a))
   let ind
 
-  let sumArr = mod.reduce((a,b)=>a+b)
-  if (sumArr==1) {
+  let sumArr = mod.reduce((a, b) => a + b)
+  if (sumArr == 1) {
     ind = mod.indexOf(1)
   } else {
     ind = mod.indexOf(0)
   }
   return integers[ind]
 }
-console.log(findOutlier( [2,6,8,10,3] )) */
+console.log(findOutlier([2, 6, 8, 10, 3]))
 
 //https://www.codewars.com/kata/5552101f47fc5178b1000050/javascript
-/* function digPow(n, p){
+function digPow(n, p) {
   // ...
   let arr = []
   arr = Array.from(String(n), Number)
-  let poww =0
+  let poww = 0
 
   for (let i = 0; i < arr.length; i++) {
-    poww += Math.pow(arr[i],p)
+    poww += Math.pow(arr[i], p)
     p++
   }
 
-  if (Number.isInteger(poww/n)) {
-    return poww/n
+  if (Number.isInteger(poww / n)) {
+    return poww / n
   }
-return -1
+  return -1
 }
-console.log(digPow(46288, 3)) */
+console.log(digPow(46288, 3))
 
 //https://www.codewars.com/kata/5270d0d18625160ada0000e4/javascript
-/*  function score( dice ) {
+function score(dice) {
   // Fill me in!
-  let result=0
-  let dice1=[]
-  let points={
-    1:1000,
-    6:600,
-    5:500,
-    4:400,
-    3:300,
-    2:200
+  let result = 0
+  let dice1 = []
+  let points = {
+    1: 1000,
+    6: 600,
+    5: 500,
+    4: 400,
+    3: 300,
+    2: 200
   }
-  let points1={
-    6:0,
-    4:0,
-    3:0,
-    2:0,
-    1:100,
-    5:50
+  let points1 = {
+    6: 0,
+    4: 0,
+    3: 0,
+    2: 0,
+    1: 100,
+    5: 50
   }
 
   const counts = {}
@@ -981,25 +977,25 @@ console.log(digPow(46288, 3)) */
     counts[num] = counts[num] ? counts[num] + 1 : 1
   }
 
-  dice=dice.sort((a , b) => a - b )
+  dice = dice.sort((a, b) => a - b)
   for (let i = 0; i <= dice.length; i++) {
-    if ((dice[i]==dice[i+1]) && (dice[i]==dice[i+2])) {
-      dice1 = dice.splice([i],[3])
+    if ((dice[i] == dice[i + 1]) && (dice[i] == dice[i + 2])) {
+      dice1 = dice.splice([i], [3])
       break
     }
   }
-  if (dice1!="") {
+  if (dice1 != "") {
     result += points[dice1[0]]
   }
   for (let g = 0; g < dice.length; g++) {
     result += points1[dice[g]]
   }
-return result ? result: 0
+  return result ? result : 0
 }
-console.log(score( [2, 4, 4, 5, 4] ))  */
+console.log(score([2, 4, 4, 5, 4]))
 
 //https://www.codewars.com/kata/555624b601231dc7a400017a/javascript
-/* let reorder = (a) => {
+let reorder = (a) => {
   let hold
   hold = 0
   hold = a.shift()
@@ -1028,124 +1024,124 @@ function josephusSurvivor(n, k) {
 
   return arr[0]
 }
-console.log(josephusSurvivor(34, 2)) */
+console.log(josephusSurvivor(34, 2))
 
 //https://www.codewars.com/kata/5c09ccc9b48e912946000157/javascript
-/* let changee = (mountain, limit,neww) => {
-    for (let f = 0; f < mountain[0].length; f++) {
-      if (mountain[0][f]=='^') {
-        mountain[0][f]=neww
-      }
-      if (mountain[mountain.length-1][f]=='^') {
-        mountain[mountain.length-1][f]=neww
-      }
+let changee = (mountain, limit, neww) => {
+  for (let f = 0; f < mountain[0].length; f++) {
+    if (mountain[0][f] == '^') {
+      mountain[0][f] = neww
     }
+    if (mountain[mountain.length - 1][f] == '^') {
+      mountain[mountain.length - 1][f] = neww
+    }
+  }
 
-    for (let i = 1; i < mountain.length-1; i++) {
-      for (let g = 0; g < mountain[i].length; g++) {
-        if((mountain[i][g]=='^') && ( (mountain[i][g+1]==limit) || (mountain[i][g-1]==limit) ||
-          (mountain[i-1][g]==limit) || (mountain[i+1][g]==limit) ) ){
-          mountain[i][g]=neww
-        }
+  for (let i = 1; i < mountain.length - 1; i++) {
+    for (let g = 0; g < mountain[i].length; g++) {
+      if ((mountain[i][g] == '^') && ((mountain[i][g + 1] == limit) || (mountain[i][g - 1] == limit) ||
+        (mountain[i - 1][g] == limit) || (mountain[i + 1][g] == limit))) {
+        mountain[i][g] = neww
       }
     }
-    return mountain
+  }
+  return mountain
 }
-var peakHeight = function(mountain) {
+var peakHeight = function (mountain) {
   // Your code here
   for (let v = 0; v < mountain.length; v++) {
     mountain[v].push(' ')
     mountain[v].unshift(' ')
   }
   let mountainn = mountain.join('')
-  if (mountainn.includes('^')==false) {
+  if (mountainn.includes('^') == false) {
     return 0
   }
 
   let limit = ' '
-  let newc=1
+  let newc = 1
 
-  while (mountainn.includes('^')==true) {
-    mountain= changee(mountain,limit, newc )
+  while (mountainn.includes('^') == true) {
+    mountain = changee(mountain, limit, newc)
     limit = newc
-    newc= newc+1
+    newc = newc + 1
     mountainn = mountain.join('')
   }
 
-  console.log(newc-1)
+  console.log(newc - 1)
   //return newc-1;
   return mountain;
 }
 
-var show = function(m) {
-    for (var y = 0; y < m.length; y++) {
-      console.log(m[y].join(''));
-    }
-    return m;
+var show = function (m) {
+  for (var y = 0; y < m.length; y++) {
+    console.log(m[y].join(''));
   }
-  var mountain = [
-      "^^^^^       ".split(''),
-      "^^^^^       ".split(''),
-      "^^^^^       ".split(''),
-      "            ".split(''),
-      "     ^^^^^^^".split(''),
-      "     ^^^^^^^".split(''),
-      "     ^^^^^^^".split(''),
-      "     ^^^^^^^".split(''),
-      "     ^^^^^^^".split(''),
-      "     ^^^^^^^".split(''),
-      "     ^^^^^^^".split(''),
-      "     ^^^^^^^".split('')
-    ]
- show( peakHeight(mountain) )  */
+  return m;
+}
+var mountain = [
+  "^^^^^       ".split(''),
+  "^^^^^       ".split(''),
+  "^^^^^       ".split(''),
+  "            ".split(''),
+  "     ^^^^^^^".split(''),
+  "     ^^^^^^^".split(''),
+  "     ^^^^^^^".split(''),
+  "     ^^^^^^^".split(''),
+  "     ^^^^^^^".split(''),
+  "     ^^^^^^^".split(''),
+  "     ^^^^^^^".split(''),
+  "     ^^^^^^^".split('')
+]
+show(peakHeight(mountain))
 
 //https://www.codewars.com/kata/55c6126177c9441a570000cc/javascript
-/* function orderWeight(strng) {
-    // your code
+function orderWeight(strng) {
+  // your code
   let wweiArr = strng.split(' ')
   wweiArr = wweiArr.filter(String)
 
-  let weiArr=[]
+  let weiArr = []
   for (let i = 0; i < wweiArr.length; i++) {
-    weiArr[i]=wweiArr[i].split('')
+    weiArr[i] = wweiArr[i].split('')
   }
 
-  let sumDigArr =[]
+  let sumDigArr = []
   for (let h = 0; h < weiArr.length; h++) {
-    if (weiArr[h].length>1) {
-      sumDigArr[h] = weiArr[h].reduce((a,b)=>parseInt(a,10)+parseInt(b,10))
-    } else{
-      sumDigArr[h] = parseInt(weiArr[h],10)
+    if (weiArr[h].length > 1) {
+      sumDigArr[h] = weiArr[h].reduce((a, b) => parseInt(a, 10) + parseInt(b, 10))
+    } else {
+      sumDigArr[h] = parseInt(weiArr[h], 10)
     }
   }
 
-  let sortDigArr = [...sumDigArr].sort((a,b)=>a-b)
+  let sortDigArr = [...sumDigArr].sort((a, b) => a - b)
 
   const counts = {};
   for (const num of sortDigArr) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
   }
 
-  let repeatArr=[]
-  let a=0
+  let repeatArr = []
+  let a = 0
   for (const key in counts) {
-    if (counts[key]>1) {
-       repeatArr.push([])
+    if (counts[key] > 1) {
+      repeatArr.push([])
       for (let f = 0; f < counts[key]; f++) {
         repeatArr[a].push(key)
-        delete(sortDigArr[sortDigArr.indexOf(parseInt(key,10))])
+        delete (sortDigArr[sortDigArr.indexOf(parseInt(key, 10))])
       }
       a++
     }
   }
 
   let newArr = []
-  let v=0
+  let v = 0
   for (let f = 0; f < repeatArr.length; f++) {
     newArr.push([])
     for (let g = 0; g < repeatArr[f].length; g++) {
-      newArr[v].push( wweiArr[sumDigArr.indexOf( parseInt (repeatArr[f][g] ,10))] )
-      delete( sumDigArr[sumDigArr.indexOf( parseInt (repeatArr[f][g] ,10))] )
+      newArr[v].push(wweiArr[sumDigArr.indexOf(parseInt(repeatArr[f][g], 10))])
+      delete (sumDigArr[sumDigArr.indexOf(parseInt(repeatArr[f][g], 10))])
     }
     v++
   }
@@ -1155,26 +1151,26 @@ var show = function(m) {
   newArr = newArr.join(',')
   newArr = newArr.split(',')
 
-  let finalArr=[]
+  let finalArr = []
   for (let b = 0; b < sortDigArr.length; b++) {
     finalArr[b] = wweiArr[sumDigArr.indexOf(sortDigArr[b])]
-    delete(sumDigArr[sumDigArr.indexOf(sortDigArr[b])])
+    delete (sumDigArr[sumDigArr.indexOf(sortDigArr[b])])
   }
-  let ç=0
+  let ç = 0
   for (let b = 0; b < finalArr.length; b++) {
-    if (finalArr[b]==undefined) {
+    if (finalArr[b] == undefined) {
 
-      finalArr[b]=newArr[ç]
+      finalArr[b] = newArr[ç]
       ç++
     }
   }
   return finalArr.join(' ')
 }
-console.log(orderWeight("479064 34 11  1700 33 4")) */
+console.log(orderWeight("479064 34 11  1700 33 4"))
 
 //https://www.codewars.com/kata/5839c48f0cf94640a20001d3/javascript
-/* function landPerimeter(arr) {
-  let per=0
+function landPerimeter(arr) {
+  let per = 0
   temp = []
   for (let i = 0; i < arr.length; i++) {
     temp[i] = arr[i].split('')
@@ -1186,7 +1182,7 @@ console.log(orderWeight("479064 34 11  1700 33 4")) */
     }
     temp[b] = temp[b].join('')
   }
-  let line=''
+  let line = ''
   for (const each of temp[0]) {
     line += 'O'
   }
@@ -1195,22 +1191,22 @@ console.log(orderWeight("479064 34 11  1700 33 4")) */
     temp.unshift(line)
   }
 
-  let perlogg=0
-  for (let g = 1; g < temp.length-1; g++) {
-    perlogg=per
+  let perlogg = 0
+  for (let g = 1; g < temp.length - 1; g++) {
+    perlogg = per
     for (let h = 1; h < temp[g].length; h++) {
-      if (temp[g][h]=='O') {
-        if (temp[g][h+1]=='X') {
-          per+=1
+      if (temp[g][h] == 'O') {
+        if (temp[g][h + 1] == 'X') {
+          per += 1
         }
-        if (temp[g][h-1]=='X') {
-          per+=1
+        if (temp[g][h - 1] == 'X') {
+          per += 1
         }
-        if (temp[g-1][h]=='X') {
-          per+=1
+        if (temp[g - 1][h] == 'X') {
+          per += 1
         }
-        if (temp[g+1][h]=='X') {
-          per+=1
+        if (temp[g + 1][h] == 'X') {
+          per += 1
         }
       }
     }
@@ -1219,12 +1215,12 @@ console.log(orderWeight("479064 34 11  1700 33 4")) */
   }
   return `Total land perimeter: ${per}`
 }
-let lannd =["XXXXXOOO", "OOXOOOOO", "OOOOOOXO", "XXXOOOXO", "OXOXXOOX"]
-console.log(landPerimeter(lannd)) */
+let lannd = ["XXXXXOOO", "OOXOOOOO", "OOOOOOXO", "XXXOOOXO", "OXOXXOOX"]
+console.log(landPerimeter(lannd))
 
 //https://www.codewars.com/kata/55983863da40caa2c900004e
 //chat GPT solution
-/* function getNextBiggerNumber(num) {
+function getNextBiggerNumber(num) {
   // Convert the number to a string, split the digits, and sort them in descending order
   let digits = num.toString().split('').sort((a, b) => b - a);
   // Join the digits to form the maximum number
@@ -1245,21 +1241,21 @@ console.log(landPerimeter(lannd)) */
     }
   }
 }
-console.log(getNextBiggerNumber(28777655)) */
+console.log(getNextBiggerNumber(28777655))
 
 // brute force solution
-/* let compare = (ogg, nStrr) =>{
-  if(ogg.length!=nStrr.length){
+let compare = (ogg, nStrr) => {
+  if (ogg.length != nStrr.length) {
     return false
   }
   let oggC = [...ogg]
   let nStrrC = [...nStrr]
-  oggC.sort((a,b)=> a-b)
-  nStrrC.sort((a,b)=> a-b)
+  oggC.sort((a, b) => a - b)
+  nStrrC.sort((a, b) => a - b)
 
-  let count=0
+  let count = 0
   for (let i = 0; i < ogg.length; i++) {
-    if (oggC[i]==nStrrC[i]) {
+    if (oggC[i] == nStrrC[i]) {
       count++
     }
   }
@@ -1268,20 +1264,20 @@ console.log(getNextBiggerNumber(28777655)) */
   }
   //console.log(count)
 }
-let nextBiggerr = (n) =>{
+let nextBiggerr = (n) => {
   let nn = n
-  let nStr =Array.from(String(nn), Number)
-  let og= Array.from(String(n), Number)
+  let nStr = Array.from(String(nn), Number)
+  let og = Array.from(String(n), Number)
 
-  let count =0
-  for (let i = nStr.length-1; i >= 0; i--) {
-    for (let g = nStr.length-1; g >= 0; g--) {
-      if( (nStr[i] > nStr[g]) && (g+1==i) ){
+  let count = 0
+  for (let i = nStr.length - 1; i >= 0; i--) {
+    for (let g = nStr.length - 1; g >= 0; g--) {
+      if ((nStr[i] > nStr[g]) && (g + 1 == i)) {
         count++
       }
     }
   }
-  if (count==0) {
+  if (count == 0) {
     return -1
   }
 
@@ -1289,26 +1285,26 @@ let nextBiggerr = (n) =>{
   do {
     nn++
     nStr = Array.from(String(nn), Number)
-    if(compare(og, nStr)==true){
-      rpt=false
+    if (compare(og, nStr) == true) {
+      rpt = false
     }
-  } while (rpt==true);
+  } while (rpt == true);
 
-  return parseInt(  nStr.join(''),10 )
+  return parseInt(nStr.join(''), 10)
 }
-console.log(nextBiggerr( 234 )) */
+console.log(nextBiggerr(234))
 
 //https://www.codewars.com/kata/520b9d2ad5c005041100000f/javascript
-/* function pigIt(str){
+function pigIt(str) {
   //Code here
   let wordsArr = str.split(' ')
-  let wordArr=[]
-  let wordArrS=[]
+  let wordArr = []
+  let wordArrS = []
   let hold
   for (let i = 0; i < wordsArr.length; i++) {
     wordArr[i] = wordsArr[i].split('')
     if (wordArr[i].join('').match(/[a-z]/i)) {
-    hold = wordArr[i].splice(0,1).join('')
+      hold = wordArr[i].splice(0, 1).join('')
       wordArr[i].push(hold)
       wordArr[i].push('ay')
     }
@@ -1316,125 +1312,125 @@ console.log(nextBiggerr( 234 )) */
   }
   return wordArrS.join(' ')
 }
-console.log(pigIt('This is my string')) */
+console.log(pigIt('This is my string'))
 
 //https://www.codewars.com/kata/53d3173cf4eb7605c10001a8/javascript
-/* let power = (array) => array.reduce((subsets, value) => subsets.concat(subsets.map(set => [value,...set])),[[]]).map(a=>a.sort()).sort();
+let power = (array) => array.reduce((subsets, value) => subsets.concat(subsets.map(set => [value, ...set])), [[]]).map(a => a.sort()).sort();
 
-console.log(power(  [ 180, 27, 478, 579 ] )) */
+console.log(power([180, 27, 478, 579]))
 
 //https://www.codewars.com/kata/5550d638a99ddb113e0000a2/javascript
-/* let reorder = (a) => {
+let reorder = (a) => {
   let hold
-  hold=0
-  hold=a.shift()
+  hold = 0
+  hold = a.shift()
   a.push(hold)
   return a
 }
-function josephus(items,k){
+function josephus(items, k) {
   //your code here
   let arr = [...items]
 
-  if (arr.length==1) {
+  if (arr.length == 1) {
     return arr
   }
-  let outt=[]
+  let outt = []
   do {
-    outt.push(arr[ (k-1 % arr.length + arr.length) % arr.length])
-    delete( arr[ (k-1 % arr.length + arr.length) % arr.length] )
-    while (arr[0]!=undefined) {
+    outt.push(arr[(k - 1 % arr.length + arr.length) % arr.length])
+    delete (arr[(k - 1 % arr.length + arr.length) % arr.length])
+    while (arr[0] != undefined) {
       arr = reorder(arr)
     }
-    arr=arr.filter(String,Number)
-  } while (arr.length>0);
+    arr = arr.filter(String, Number)
+  } while (arr.length > 0);
   //console.log(arr)
   //console.log(outt)
-  return outt[0]==undefined ? [] : outt
+  return outt[0] == undefined ? [] : outt
 }
-console.log(josephus ([1,5,3,67,3,1],3) ) */
+console.log(josephus([1, 5, 3, 67, 3, 1], 3))
 
 //https://www.codewars.com/kata/5f7c38eb54307c002a2b8cc8/javascript
-/* function removeParentheses(s){
+function removeParentheses(s) {
   let sArr = [...s]
-  let initial=0
-  let final=0
+  let initial = 0
+  let final = 0
 
   while (sArr.includes('(') || sArr.includes(')')) {
     for (let i = initial; i < sArr.length; i++) {
-      if (sArr[i]=='(') {
+      if (sArr[i] == '(') {
         initial = i
       }
     }
     for (let i = initial; i < sArr.length; i++) {
-      if (sArr[i]==')') {
+      if (sArr[i] == ')') {
         final = i
         break
       }
     }
-    sArr.splice(initial, (final-initial+1))
-    initial=0
-    final=0
+    sArr.splice(initial, (final - initial + 1))
+    initial = 0
+    final = 0
   }
-  console.log(initial,final)
+  console.log(initial, final)
   return sArr.join('')
 }
 console.log(removeParentheses("a(b(c))"))
 console.log(removeParentheses("example(unwanted thing)example"))
-console.log(removeParentheses("\n(first group) (second group) (third group)")) */
+console.log(removeParentheses("\n(first group) (second group) (third group)"))
 
 //https://www.codewars.com/kata/52742f58faf5485cae000b9a/javascript
-/* function formatDuration (seconds) {
+function formatDuration(seconds) {
   // Complete this function
-  if (seconds==0) {
+  if (seconds == 0) {
     return 'now'
   }
   let timeLeft = seconds
-  let scnds=null
-  let minutes=null
-  let hours=null
-  let days=null
-  let years=null
+  let scnds = null
+  let minutes = null
+  let hours = null
+  let days = null
+  let years = null
 
-  while (timeLeft>0) {
-    if (timeLeft>=31536000) {
+  while (timeLeft > 0) {
+    if (timeLeft >= 31536000) {
       years++
-      timeLeft-=31536000
-    } else if (timeLeft>=86400) {
+      timeLeft -= 31536000
+    } else if (timeLeft >= 86400) {
       days++
-      timeLeft-= 86400
-    } else if (timeLeft>=3600){
+      timeLeft -= 86400
+    } else if (timeLeft >= 3600) {
       hours++
-      timeLeft-= 3600
-    } else if (timeLeft>=60) {
+      timeLeft -= 3600
+    } else if (timeLeft >= 60) {
       minutes++
-      timeLeft-=60
+      timeLeft -= 60
     } else {
       scnds = timeLeft
       timeLeft = 0
     }
   }
-  let m='minutes'
-  let s='seconds'
-  let h= 'hours'
-  let d= 'days'
-  let y='years'
-  if (minutes==1) {
-    m='minute'
+  let m = 'minutes'
+  let s = 'seconds'
+  let h = 'hours'
+  let d = 'days'
+  let y = 'years'
+  if (minutes == 1) {
+    m = 'minute'
   }
-  if (scnds==1) {
-    s='second'
+  if (scnds == 1) {
+    s = 'second'
   }
-  if (hours==1) {
-    h='hour'
+  if (hours == 1) {
+    h = 'hour'
   }
-  if (days==1) {
-    d='day'
+  if (days == 1) {
+    d = 'day'
   }
-  if (years==1) {
-    y='year'
+  if (years == 1) {
+    y = 'year'
   }
 
-  let final=[`${years} ${y}`,`${days} ${d}`,`${hours} ${h}`,`${minutes} ${m}`,`${scnds} ${s}`]
+  let final = [`${years} ${y}`, `${days} ${d}`, `${hours} ${h}`, `${minutes} ${m}`, `${scnds} ${s}`]
   let i = 0;
   while (i < final.length) {
     if (final[i].includes(null)) {
@@ -1443,53 +1439,53 @@ console.log(removeParentheses("\n(first group) (second group) (third group)")) *
       i++;
     }
   }
-  let holdLast =  final.splice([final.length-1],1)
-  return  final[0] ? `${final.join(', ')} and ${holdLast.join('')}` : holdLast.join('')
+  let holdLast = final.splice([final.length - 1], 1)
+  return final[0] ? `${final.join(', ')} and ${holdLast.join('')}` : holdLast.join('')
 }
-console.log(formatDuration(253374061)) */
+console.log(formatDuration(253374061))
 
 //https://www.codewars.com/kata/5b997b066c77d521880001bd/javascript    UNRESOLVED
-/* function allPermutedd(l) {
+function allPermutedd(l) {
   let arr = [];
-  let factorial1=1n
-  let formula=0n
+  let factorial1 = 1n
+  let formula = 0n
 
   for (let i = 1; i <= l; i++) {
-    arr.push(BigInt(i) )
+    arr.push(BigInt(i))
 
-    for (let j = 1; j < i; j++ ){
+    for (let j = 1; j < i; j++) {
       factorial1 *= BigInt(j)
     }
     //console.log(typeof(factorial1))
-     console.log(`1/ ${factorial1} = ${1n / factorial1 }` )
+    console.log(`1/ ${factorial1} = ${1n / factorial1}`)
 
-    if ((i-1)%2==0) {
-      formula += 1n/ factorial1
-      }else{
-      formula -= 1n/ factorial1
-      }
-      //console.log('formula',Number.parseFloat(formula).toFixed(20) )
-      //console.log(factorial1)
-      factorial1=1n
+    if ((i - 1) % 2 == 0) {
+      formula += 1n / factorial1
+    } else {
+      formula -= 1n / factorial1
     }
+    //console.log('formula',Number.parseFloat(formula).toFixed(20) )
+    //console.log(factorial1)
+    factorial1 = 1n
+  }
 
-  let factorial = BigInt(arr.reduce((a,b)=>a*b))
+  let factorial = BigInt(arr.reduce((a, b) => a * b))
   //console.log(factorial.toString() )
   //console.log(typeof(factorial))
   let result = (factorial * formula)
 
   return result
 }
-console.log( allPermutedd(30n) )
+console.log(allPermutedd(30n))
 
 // 97 581 073 836 835 777 732 377 428 235 481 n
-// 97 581 073 836 835 800 000 000 000 000 000 */
+// 97 581 073 836 835 800 000 000 000 000 000 
 
 //https://www.codewars.com/kata/5779f894ec8832493f00002d/javascript
-/* let fibDigits = (n) =>{
-  let fibSeq = [0n,1n]
+let fibDigits = (n) => {
+  let fibSeq = [0n, 1n]
   for (let i = 1n; i < n; i++) {
-    fibSeq.push(fibSeq[i-1n] + fibSeq[i] )
+    fibSeq.push(fibSeq[i - 1n] + fibSeq[i])
   }
 
   let split = fibSeq[n]
@@ -1499,20 +1495,20 @@ console.log( allPermutedd(30n) )
   for (const num of split) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
   }
-  let valuesArr = Object.values(counts).sort((a,b)=>b-a)
+  let valuesArr = Object.values(counts).sort((a, b) => b - a)
 
   let countsArr = []
   for (const each in valuesArr) {
-    key = Object.keys(counts).sort((a,b)=>b-a).find(key => counts[key] === valuesArr[each]);
-    countsArr[each] = [valuesArr[each] , parseInt(key) ]
-    delete(counts[key])
+    key = Object.keys(counts).sort((a, b) => b - a).find(key => counts[key] === valuesArr[each]);
+    countsArr[each] = [valuesArr[each], parseInt(key)]
+    delete (counts[key])
   }
   return countsArr
 }
-console.log(fibDigits(10000n)) */
+console.log(fibDigits(10000n))
 
 //https://www.codewars.com/kata/52223df9e8f98c7aa7000062/javascript
-/* function rot13(str) {
+function rot13(str) {
   let lCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
   //let uCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   let strArr = str.split('')
@@ -1520,18 +1516,18 @@ console.log(fibDigits(10000n)) */
   for (let i = 0; i < strArr.length; i++) {
     if (strArr[i].match(/[a-z]/)) {
       let position = lCase.indexOf(strArr[i])
-      strArr[i] = lCase[ ((position+14)-1 % lCase.length + lCase.length) % lCase.length]
+      strArr[i] = lCase[((position + 14) - 1 % lCase.length + lCase.length) % lCase.length]
     } else if (strArr[i].match(/[A-Z]/)) {
       let position = lCase.indexOf(strArr[i].toLowerCase())////
-      strArr[i] = lCase[ ((position+14)-1 % lCase.length + lCase.length) % lCase.length].toUpperCase()/////
+      strArr[i] = lCase[((position + 14) - 1 % lCase.length + lCase.length) % lCase.length].toUpperCase()/////
     }
   }
   return strArr.join('')
 }
-console.log(rot13("This is my first ROT13 excercise!")) */
+console.log(rot13("This is my first ROT13 excercise!"))
 
 //https://www.codewars.com/kata/52ec24228a515e620b0005ef
-/* function sum(num) {
+function sum(num) {
   const memo = new Map(); // CHAT GPT CODE
   return countPartitions(num, memo);
 }
@@ -1568,70 +1564,71 @@ function countPartitions(n, memo) {
 }
 const n = 100;
 const numPartitions = sum(n);
-console.log(`The number of integer partitions of ${n} is ${numPartitions}.`);  */
+console.log(`The number of integer partitions of ${n} is ${numPartitions}.`);
 
 //https://www.codewars.com/kata/52597aa56021e91c93000cb0/javascript
-/* function moveZeros(arr) {
-  let hold=[]
-  while (arr.includes(0)  ) {
-    hold.push( arr.splice((arr.indexOf(0)),1).join('') )
+function moveZeros(arr) {
+  let hold = []
+  while (arr.includes(0)) {
+    hold.push(arr.splice((arr.indexOf(0)), 1).join(''))
   }
-  return arr.concat( hold.map(a=>parseInt(a)))
+  return arr.concat(hold.map(a => parseInt(a)))
 }
-console.log(moveZeros([ 9, +0, 9, 1,0, 2, 0,1,'f', 1, 3,[]]  )) */
+console.log(moveZeros([9, +0, 9, 1, 0, 2, 0, 1, 'f', 1, 3, []]))
 
 //https://www.codewars.com/kata/5267faf57526ea542e0007fb/javascript
-/* Math.round = function(n) {
+Math.round = function (n) {
   let mRound = 0
-  if ((n%2===0) || (n%2===1)) {
+  if ((n % 2 === 0) || (n % 2 === 1)) {
     mRound = n
-  } else{
-    let nArr =  Array.from(String(n), String)
-    if (parseInt(nArr[nArr.indexOf('.')+1]) >= 5) {
-      mRound = parseInt(nArr.slice(0, (nArr.indexOf('.'))).join('')) +1
-    } else{
+  } else {
+    let nArr = Array.from(String(n), String)
+    if (parseInt(nArr[nArr.indexOf('.') + 1]) >= 5) {
+      mRound = parseInt(nArr.slice(0, (nArr.indexOf('.'))).join('')) + 1
+    } else {
       mRound = parseInt(nArr.slice(0, (nArr.indexOf('.'))).join(''))
     }
   }
   return mRound; // TODO: fix this
 };
 
-Math.ceil = function(n) {
-  let mCeil=0
-  if ((n%2===0) || (n%2===1)) {
-    mCeil=n
-  } else{
-    let nArr =  Array.from(String(n), String)
-    mCeil = parseInt(nArr.slice(0, (nArr.indexOf('.'))).join('')) +1
+Math.ceil = function (n) {
+  let mCeil = 0
+  if ((n % 2 === 0) || (n % 2 === 1)) {
+    mCeil = n
+  } else {
+    let nArr = Array.from(String(n), String)
+    mCeil = parseInt(nArr.slice(0, (nArr.indexOf('.'))).join('')) + 1
   }
   return mCeil; // TODO: fix this
 };
 
-Math.floor = function(n) {
-   let mFloor=0
-   if ((n%2===0) || (n%2===1)) {
-    mFloor=n
-  } else{
-    let nArr =  Array.from(String(n), String)
-    mFloor =parseInt(nArr.slice(0, (nArr.indexOf('.'))).join(''))   }
+Math.floor = function (n) {
+  let mFloor = 0
+  if ((n % 2 === 0) || (n % 2 === 1)) {
+    mFloor = n
+  } else {
+    let nArr = Array.from(String(n), String)
+    mFloor = parseInt(nArr.slice(0, (nArr.indexOf('.'))).join(''))
+  }
   return mFloor; // TODO: fix this
-}; */
+};
 
 //https://www.codewars.com/kata/525caa5c1bf619d28c000335/javascript
-/*  function isSolved(board) {
+function isSolved(board) {
   // TODO: Check if the board is solved!
-  let boardArr =[]
-  board.forEach(a=>boardArr.push(a.join(' ')))
+  let boardArr = []
+  board.forEach(a => boardArr.push(a.join(' ')))
   boardArr = boardArr.join(' ').split(' ')
 
   let verify = []
-  let wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[6,4,2]]
+  let wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]]
 
   for (let i = 0; i < wins.length; i++) {
     for (let j = 0; j < wins[i].length; j++) {
-      verify.push( boardArr[wins[i][j]] )
+      verify.push(boardArr[wins[i][j]])
     }
-    if ((verify[0]==verify[1]) && (verify[1]==verify[2]) && (verify[0]!=0) ) {
+    if ((verify[0] == verify[1]) && (verify[1] == verify[2]) && (verify[0] != 0)) {
       return parseInt(verify[0])
     }
     for (let n = 0; n < 3; n++) {
@@ -1639,46 +1636,46 @@ Math.floor = function(n) {
     }
   }
 
-  if (board.join().includes('0'))  return -1;
-  if (!board.join().includes('0'))  return 0;
+  if (board.join().includes('0')) return -1;
+  if (!board.join().includes('0')) return 0;
 }
-console.log(isSolved([[1,2,1],[0,0,0],[2,2,2]])) //2 */
+console.log(isSolved([[1, 2, 1], [0, 0, 0], [2, 2, 2]])) //2 
 
 //https://www.codewars.com/kata/5216a87cbf53a9c30f0000dc/javascript
 // returns index of move
-/* function solveTTT(board) {
-  let wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[6,4,2]]
-  let verify=[]
-  let resultWin=[]
+function solveTTT(board) {
+  let wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [6, 4, 2]]
+  let verify = []
+  let resultWin = []
   for (let i = 0; i < wins.length; i++) {
     for (let j = 0; j < wins[i].length; j++) {
-      verify.push( board[wins[i][j]] )
+      verify.push(board[wins[i][j]])
     }
     let counts = {};
     for (const num of verify) {
       counts[num] = counts[num] ? counts[num] + 1 : 1;
     }
 
-    if( ( counts['X']==2) && ( counts['']==1) ){
-      resultWin.push(wins[i][verify.indexOf('')] )
+    if ((counts['X'] == 2) && (counts[''] == 1)) {
+      resultWin.push(wins[i][verify.indexOf('')])
     }
     for (let n = 0; n < 3; n++) {
       verify.pop()
     }
   }
 
-  let result=[]
+  let result = []
   for (let i = 0; i < board.length; i++) {
-    if (board[i]=='') {
+    if (board[i] == '') {
       result.push(i)
     }
   }
-  return resultWin!='' ? resultWin[0] : result
+  return resultWin != '' ? resultWin[0] : result
 }
-console.log(solveTTT(  ['', '', '', 'O', '', '', 'X', '', '']  ))  */
+console.log(solveTTT(['', '', '', 'O', '', '', 'X', '', '']))
 
 //https://www.codewars.com/kata/564e624da64546f72e0000e8/javascript
-/* function cake(ing, am) {
+function cake(ing, am) {
   var recipe = {
     'caster sugar': 160,
     'butter': 170,
@@ -1715,15 +1712,15 @@ console.log(solveTTT(  ['', '', '', 'O', '', '', 'X', '', '']  ))  */
   return recipe
   //Your solution
 }
-console.log(cake('butter', 283.3)) */
+console.log(cake('butter', 283.3))
 
 //https://www.codewars.com/kata/58a6ac309b5762b7aa000030
-/* let circleSlashh = (n) => parseInt((Number(n).toString(2) + Number(n).toString(2)[0]).replace(/./, ''), 2)
+let circleSlashh = (n) => parseInt((Number(n).toString(2) + Number(n).toString(2)[0]).replace(/./, ''), 2)
 
-console.log(circleSlashh(508080632));  */
+console.log(circleSlashh(508080632));
 
 //https://www.codewars.com/kata/58fec262184b6dc30800000d/javascript
-/* function maximizePoints(team1, team2) {
+function maximizePoints(team1, team2) {
   //coding and coding..
   team1.sort((a, b) => a - b)
   team2.sort((a, b) => a - b)
@@ -1742,10 +1739,10 @@ console.log(circleSlashh(508080632));  */
   team2.forEach(a => a < team1Final[team2.indexOf(a)] ? c++ : a);
   return team1Final.length
 }
-console.log(maximizePoints([7, 19, 23, 18, 38, 37, 38, 40], [21, 12, 1, 0, 13, 38, 25, 49])) */
+console.log(maximizePoints([7, 19, 23, 18, 38, 37, 38, 40], [21, 12, 1, 0, 13, 38, 25, 49]))
 
 //https://www.codewars.com/kata/546d15cebed2e10334000ed9/javascript
-/* function solveExpression(exp) {
+function solveExpression(exp) {
   expArr = exp.split('')
 
   let leftZeroIndex
@@ -1847,10 +1844,10 @@ console.log(maximizePoints([7, 19, 23, 18, 38, 37, 38, 40], [21, 12, 1, 0, 13, 3
   }
   return missingRune != undefined ? missingRune : -1
 }
-console.log(solveExpression('-7715?5--484?00=-28?9?5'))//6 */
+console.log(solveExpression('-7715?5--484?00=-28?9?5'))//6 
 
 //https://www.codewars.com/kata/59031db02b0070a923000110/javascript UNSOLVED
-/* zeroOrOneee = (n, s) => {
+zeroOrOneee = (n, s) => {
   let b = []
   for (i in s[0]) {
     let c = 0
@@ -1864,9 +1861,9 @@ console.log(solveExpression('-7715?5--484?00=-28?9?5'))//6 */
 console.log(zeroOrOneee(3, [
   [1, 0, 1, 0, 1],
   [1, 0, 1, 0, 1],
-  [0, 1, 0, 1, 0]]))//[1, 0, 1, 0, 1] */
+  [0, 1, 0, 1, 0]]))//[1, 0, 1, 0, 1] 
 
-/* zeroOrOne0 = (n, s) => {
+zeroOrOne0 = (n, s) => {
   return s.reduce((a, c) => {
     return c.map((v, i) => {
       return (a[i] + v) //> n / 2 ? 1 : 0
@@ -1883,11 +1880,11 @@ console.log(zeroOrOne(3, [
   [1, 0, 1, 0, 1],
   [1, 0, 1, 0, 1],
   [0, 1, 0, 1, 0]]))//[1, 0, 1, 0, 1]
-//[2, 1, 2, 1, 2] */
+//[2, 1, 2, 1, 2] 
 
 
 //https://www.codewars.com/kata/587593285448632b8d000143 UNSOLVED
-/* function submitOrder(user) {
+function submitOrder(user) {
   var shoppingCart, zipCode, shippingRate, orderSuccessful;
   // Get the current user's shopping cart
   let OrderAPI = {
@@ -1934,12 +1931,12 @@ console.log(zeroOrOne(3, [
     console.log(`Your order ${orderSuccessful ? "was" : "was NOT"} placed successfully`);
   });
 }
-submitOrder(12345); */
+submitOrder(12345);
 
 //https://www.codewars.com/kata/52a78825cdfc2cfc87000005/javascript
-/* const calc = function (expression) {
+const calc = function (expression) {
   expression = expression.replaceAll(' ', '')
-  let signals = /[\+\-\/*]/
+  let signals = /[\+\-\]/
   if (((!expression.includes('*')) && (!expression.includes('+')) && (!expression.includes('/')) && expression[0] == '-') || (!signals.test(expression))) {
     return expression.includes('.') ? parseFloat(expression) : parseInt(expression)
   }
@@ -1963,7 +1960,7 @@ submitOrder(12345); */
     let solveParentheses = expressionArr.splice(spliceLeft, spliceRight + 1)
     solveParentheses = solveParentheses.join('').replaceAll('--', '+').replaceAll('-+', '-').replaceAll('+-', '-').replaceAll('++', '+')
     solveParentheses = solveParentheses.split('')
-    let signal1 = /[\/*]/
+    let signal1 = /[\]/
     let limits = /^[\(\)\*\+\-\/]+$/
     let limitLeft, limitRight, solved
     let spliceLength = 1
@@ -2039,11 +2036,11 @@ console.log(calc('2 / (2 + 3) * 4.33 - -6'))//7.732
 console.log(calc('-123'))//-123
 console.log(calc("((80 - (19)))"))//61
 console.log(calc("(1 - 2) + -(-(-(-4)))"))//3
-console.log(calc("123.45*(678.90 / (-2.5+ 11.5)-(80 -19) *33.25) / 20 + 11"))//-12042.760875 */
+console.log(calc("123.45*(678.90 / (-2.5+ 11.5)-(80 -19) *33.25) / 20 + 11"))//-12042.760875 
 
 
 //https://www.codewars.com/kata/56a73d2194505c29f600002d DIDN'T TEST, CODE FOUND ON WEB
-/* const myString = "11101";
+const myString = "11101";
 const regex = /^(0|(10((0|11)(1|00))*(10|(0|11)01)|11)(01*0(0|101|1(1|00)((0|11)(1|00))*(10|(0|11)01)))*1)+$/;
 
 if (regex.test(myString)) {
@@ -2051,19 +2048,19 @@ if (regex.test(myString)) {
 } else {
   console.log("String does not match the pattern.");
 }
- */
+
 
 
 //https://www.codewars.com/kata/585d7d5adb20cf33cb000235/javascript
-/* function findUniq(arr) {
+function findUniq(arr) {
   // do magic
   arr.sort((a, b) => a - b)
   return arr[0] == arr[1] ? arr.pop() : arr[0]
 }
-console.log(findUniq([1, 1, 1, 2, 1, 1])) */
+console.log(findUniq([1, 1, 1, 2, 1, 1]))
 
 //https://www.codewars.com/kata/5a86073fb17101e453000258/javascript
-/* function sortEmotions(arr, order) {
+function sortEmotions(arr, order) {
   let arrObj = {
     1: ':D',
     2: ':)',
@@ -2078,10 +2075,10 @@ console.log(findUniq([1, 1, 1, 2, 1, 1])) */
   return order ? arrOrder.sort((a, b) => a - b).map(a => arrObj[a]) : arrOrder.sort((a, b) => b - a).map(a => arrObj[a])// (ง •̀_•́)ง
 }
 console.log(sortEmotions([':)', 'T_T', ':)', ':D', ':D'], false))
-console.log(sortEmotions([], true)) */
+console.log(sortEmotions([], true))
 
 //https://www.codewars.com/kata/59f70440bee845599c000085/javascript
-/* function findHack(arr) {
+function findHack(arr) {
   let gradesObj = { A: 30, B: 20, C: 10, D: 5 }
   let arrOut = []
 
@@ -2111,11 +2108,11 @@ var array = [
   ["name2", 110, ["B", "A", "A", "A"]], //  name2 point is right
   ["name3", 200, ["B", "A", "A", "C"]] // name3 point is 200 but real point is 90 => hacked
 ];
-console.log(findHack(array)) */
+console.log(findHack(array))
 
 
 //https://www.codewars.com/kata/586dd5f4a44cfc48bb000011/javascript
-/* var spaghettiCode = function (plate) {
+var spaghettiCode = function (plate) {
   // Your code here
   let spghtRegex = /^[A-Z]/
   let piecesArr = []
@@ -2200,15 +2197,15 @@ var plate = [
   '____________'.split(''),
   '____________'.split('')
 ]
-console.log(spaghettiCode(plate)) */
+console.log(spaghettiCode(plate))
 
 
 //https://www.codewars.com/kata/583203e6eb35d7980400002a/javascript
-/* let countSmileys = (arr) => arr.filter(a => /^[;:][-~]?[)D]$/.test(a)).length
-console.log(countSmileys([":-)", ";~D", ":-D", ":_D"])) */
+let countSmileys = (arr) => arr.filter(a => /^[;:][-~]?[)D]$/.test(a)).length
+console.log(countSmileys([":-)", ";~D", ":-D", ":_D"]))
 
 //https://www.codewars.com/kata/529fdef7488f509b81000061 UNSOLVED
-/* function solvee(input) {
+function solvee(input) {
   let inputSet = input.split('\n')//.join(' ')
   let inputSetEach = inputSet.join(' ').split(' ')
 
@@ -2294,11 +2291,11 @@ let i6 = '219264 601206\n994347 32057\n52718 730732'
 let i7 = '998206 23802\n665136 743822\n870211 727587\n372631 33174\n672009 851810'
 console.log(solve(i5))
 console.log(solve(i6))
-console.log(solve(i7)) */
+console.log(solve(i7))
 
 
 //https://www.codewars.com/kata/5ae326342f8cbc72220000d2/javascript
-/* function stringExpansion(s) {
+function stringExpansion(s) {
   // Good luck!
   let n = /\d+/g
   let l = /^[a-zA-Z]+$/
@@ -2324,11 +2321,11 @@ console.log(solve(i7)) */
   }
   return r.join('')
 }
-console.log(stringExpansion('FG24y6j66dfg2jj')) */
+console.log(stringExpansion('FG24y6j66dfg2jj'))
 
 
 //https://www.codewars.com/kata/5375f921003bf62192000746/javascript
-/* function abbreviate(string) {
+function abbreviate(string) {
   // ...
   string += ' l'
   let stringCpy = string
@@ -2362,10 +2359,10 @@ console.log(stringExpansion('FG24y6j66dfg2jj')) */
 
   return stringCpy.substring(0, stringCpy.length - 2)
 }
-console.log(abbreviate('elephant-ride')) */
+console.log(abbreviate('elephant-ride'))
 
 //https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/javascript
-/* function separateLiquids(glass) {
+function separateLiquids(glass) {
   if (glass == '') {
     return []
   }
@@ -2391,11 +2388,11 @@ console.log(abbreviate('elephant-ride')) */
   return r
 }
 console.log(separateLiquids([['A', 'O', 'A', 'O', 'H'], ['A', 'O', 'H', 'W', 'O'], ['W', 'O', 'W', 'A', 'W'], ['H', 'O', 'H', 'O', 'O']]))
- */
+
 
 
 //https://www.codewars.com/kata/554ca54ffa7d91b236000023/javascript
-/* function deleteNth(arr, n) {
+function deleteNth(arr, n) {
   // ...
   arr.reverse()
 
@@ -2410,11 +2407,11 @@ console.log(separateLiquids([['A', 'O', 'A', 'O', 'H'], ['A', 'O', 'H', 'W', 'O'
   return arr.reverse().filter(a => a != '')
 }
 console.log(deleteNth([1, 1, 3, 3, 7, 2, 2, 2, 2, 3, 3], 3))
- */
+
 
 
 //https://www.codewars.com/kata/576757b1df89ecf5bd00073b/javascript
-/* function towerBuilder(nFloors) {
+function towerBuilder(nFloors) {
   // build here
   if (nFloors == 1) {
     return ['*']
@@ -2439,11 +2436,11 @@ console.log(deleteNth([1, 1, 3, 3, 7, 2, 2, 2, 2, 3, 3], 3))
 
   return r.map(a => a = a.join(''))
 }
-console.log(towerBuilder(6)) */
+console.log(towerBuilder(6))
 
 
 //https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c/javascript
-/* let maxSequence = (arr) => {
+let maxSequence = (arr) => {
 
   let arrc = []
   for (let i = 0; i < arr.length; i++) {
@@ -2459,11 +2456,11 @@ console.log(towerBuilder(6)) */
 
   return Math.max(...red) >= 0 ? Math.max(...red) : 0
 }
-console.log(maxSequence([7, 4, 11, -11, 39, 36, 10, -6, 37, -10, -32, 44, -26, -34, 43, 43])) */
+console.log(maxSequence([7, 4, 11, -11, 39, 36, 10, -6, 37, -10, -32, 44, -26, -34, 43, 43]))
 
 
 //https://www.codewars.com/kata/56e3cbb5a28956899400073f/javascript
-/* function findSubarrMaxSum(arr) {
+function findSubarrMaxSum(arr) {
   // your code here
   let arrc = []
   for (let i = 0; i < arr.length; i++) {
@@ -2490,11 +2487,11 @@ console.log(maxSequence([7, 4, 11, -11, 39, 36, 10, -6, 37, -10, -32, 44, -26, -
 
   return cmbs.length > 1 ? max >= 0 ? [cmbs, max] : [[], 0] : [cmbs[0], max]
 }
-console.log(findSubarrMaxSum([4, -1, 2, 1, -40, 1, 2, -1, 4,])) */
+console.log(findSubarrMaxSum([4, -1, 2, 1, -40, 1, 2, -1, 4,]))
 
 
 //https://www.codewars.com/kata/596f610441372ee0de00006e/javascript
-/* const deNico = (key, m) => {
+const deNico = (key, m) => {
   let c = key.split('').sort()
   let nKey = []
   for (let i = 0; i < c.length; i++) {
@@ -2516,11 +2513,11 @@ console.log(findSubarrMaxSum([4, -1, 2, 1, -40, 1, 2, -1, 4,])) */
   }
   return d.join('')
 }
-console.log(deNico("crazy", "cseerntiofarmit on   ")) */
+console.log(deNico("crazy", "cseerntiofarmit on   "))
 
 
 //https://www.codewars.com/kata/56d6b921c9ae3fd926000601 UNSOLVED
-/* Array.prototype.toStringg = function () {
+Array.prototype.toStringg = function () {
 
   let r = this
   //console.log(r.every(e => typeof e === 'number'))
@@ -2544,10 +2541,10 @@ let d = [1, 2, 3, 4, 5].toString()
 console.log(d, typeof d)
 
 let e = 'text'.toString()
-console.log(e, typeof d) */
+console.log(e, typeof d)
 
 //https://www.codewars.com/kata/54b42f9314d9229fd6000d9c
-/* function duplicateEncode(word) {
+function duplicateEncode(word) {
   // ...
   const counts = {};
   for (const num of word.toLowerCase().split('')) {
@@ -2559,10 +2556,10 @@ console.log(e, typeof d) */
 console.log(duplicateEncode('Success'))//")())())"
 console.log(duplicateEncode('din'))
 console.log(duplicateEncode('recede'))
-console.log(duplicateEncode('(( @')) */
+console.log(duplicateEncode('(( @'))
 
 //https://www.codewars.com/kata/57d2c32626427662e30004a6 UNTESTED
-/* let ff = (m, n) => {
+let ff = (m, n) => {
   let ini = Math.min(m, n)
   let fin = Math.max(m, n)
   let str = ''
@@ -2585,10 +2582,10 @@ let f = (m, n) => [...Array(Math.abs(m - n) + 1)]
     .join(''))
   .join('') + (m > n ? '' : '\n');
 
-console.log(f(3, 1)) */
+console.log(f(3, 1))
 
 //https://www.codewars.com/kata/58ad388555bf4c80e800001e
-/* function cutTheRopes(a) {
+function cutTheRopes(a) {
   //coding and coding..
   let rpsL = [a.length]
 
@@ -2604,10 +2601,10 @@ console.log(f(3, 1)) */
   return rpsL.slice(0, -1)
 }
 console.log(cutTheRopes([3, 3, 2, 9, 7]))//[5, 4, 2, 1]
-console.log(cutTheRopes([1, 2, 3, 4, 3, 3, 2, 1]))//[8, 6, 4, 1] */
+console.log(cutTheRopes([1, 2, 3, 4, 3, 3, 2, 1]))//[8, 6, 4, 1] 
 
 //https://www.codewars.com/kata/60cc93db4ab0ae0026761232
-/* function arrange(s) {
+function arrange(s) {
   // your code here
   let t = []
   for (let i = 0; i < s.length; i += 2) {
@@ -2617,10 +2614,10 @@ console.log(cutTheRopes([1, 2, 3, 4, 3, 3, 2, 1]))//[8, 6, 4, 1] */
   return t.slice(0, s.length)
 }
 console.log(arrange([4, 3, 2]))//[4, 2, 3]);
-console.log(arrange([9, 7, -2, 8, 5, -3, 6, 5, 1]))//[9, 1, 5, 7, -2, 6, -3, 8, 5]); */
+console.log(arrange([9, 7, -2, 8, 5, -3, 6, 5, 1]))//[9, 1, 5, 7, -2, 6, -3, 8, 5]); 
 
 //https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1
-/* snail = function (array) {
+snail = function (array) {
   // enjoy
   let rArr = [];
   let len = array.flat().length
@@ -2652,10 +2649,10 @@ console.log(arrange([9, 7, -2, 8, 5, -3, 6, 5, 1]))//[9, 1, 5, 7, -2, 6, -3, 8, 
   return array == '' ? rArr : rArr.concat(array[0])
 }
 let a1 = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]
-console.log(snail(a1)) */
+console.log(snail(a1))
 
 //https://www.codewars.com/kata/5318f00b31b30925fd0001f8/solutions/javascript
-/* var numberToPrice = function (number) {
+var numberToPrice = function (number) {
   if (typeof number != 'number') {
     return NaN;
   }
@@ -2689,10 +2686,10 @@ console.log(snail(a1)) */
 console.log(numberToPrice(1500.129))//'1,500.12'
 console.log(numberToPrice(-5))//'-5.00
 console.log(numberToPrice(1000000.5))//'1,000,000.50'
-console.log(numberToPrice(-200000.1))//'13,422.12' */
+console.log(numberToPrice(-200000.1))//'13,422.12' 
 
 //https://www.codewars.com/kata/565c4e1303a0a006d7000127/train/javascript
-/* var numberFormat = function (number) {
+var numberFormat = function (number) {
   //Your code here
   let nArray = Array.from(String(number), String);
   for (let i = nArray.length; i > 0; i -= 3) {
@@ -2702,11 +2699,11 @@ console.log(numberToPrice(-200000.1))//'13,422.12' */
   }
   return nArray.splice(0, nArray.length - 1).join('')
 };
-console.log(numberFormat(5678545)) */
+console.log(numberFormat(5678545))
 
 
 //https://www.codewars.com/kata/52c4dd683bfd3b434c000292
-/* function isInteresting(number, awesomePhrases) {
+function isInteresting(number, awesomePhrases) {
   let r = 2;
   for (let i = 0; i < 3; i++) {
 
@@ -2739,10 +2736,10 @@ console.log(numberFormat(5678545)) */
   return 0;
 }
 console.log(isInteresting(120, [1337, 256]))//1
-console.log(isInteresting(1335, [1337, 256]))//1 */
+console.log(isInteresting(1335, [1337, 256]))//1 
 
 //https://www.codewars.com/kata/51ba717bb08c1cd60f00002f
-/* function solution(list) {
+function solution(list) {
   // TODO: complete solution
   let range = []
   let temp = []
@@ -2760,10 +2757,10 @@ console.log(isInteresting(1335, [1337, 256]))//1 */
   return range.map(a => a.length > 2 ? `${a[0]}-${a[a.length - 1]}` : a.join(',')).join(',')
 }
 console.log(solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]))
-console.log(solution([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20])) */
+console.log(solution([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]))
 
 //https://www.codewars.com/kata/587319230e9cf305bb000098/
-/* var soundex = function (names) {
+var soundex = function (names) {
   // Your code here
   let f = names.split(' ').map(a => a[0])
 
@@ -2823,10 +2820,10 @@ console.log(solution([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 1
   names = names.map(a => a.slice(0, 4))
   return names.join(' ')
 }
-console.log(soundex("pxd iebbidpusuuocqxzfvfe hlagesklndacmzvqo jbvtepfj uwqmu")) */
+console.log(soundex("pxd iebbidpusuuocqxzfvfe hlagesklndacmzvqo jbvtepfj uwqmu"))
 
 //https://www.codewars.com/kata/59c2e2a36bddd2707e000079/train/javascript
-/* let solveTry = (i, equation) => {
+let solveTry = (i, equation) => {
   let equationC = equation
   for (let k = 0; k < equationC.length; k++) {
     equationC = equationC.replace('x', `${i}`)
@@ -2847,10 +2844,10 @@ function solveForX(equation) {
     }
   }
 }
-console.log(solveForX('20 = 5 * x - 5'))//5 */
+console.log(solveForX('20 = 5 * x - 5'))//5 
 
 //https://www.codewars.com/kata/5277c8a221e209d3f6000b56/solutions/javascript
-/* function validBraces(braces) {
+function validBraces(braces) {
   //TODO
   let pairs = { ')': '(', ']': '[', '}': '{' }
   let bracesArr = braces.split('')
@@ -2864,10 +2861,10 @@ console.log(solveForX('20 = 5 * x - 5'))//5 */
 
   return bracesArr.length ? false : true
 }
-console.log(validBraces("[({})]()["))//false */
+console.log(validBraces("[({})]()["))//false 
 
 //https://www.codewars.com/kata/561c20edc71c01139000017c
-/* function buildMatchesTable(numberOfTeams) {
+function buildMatchesTable(numberOfTeams) {
   if (numberOfTeams == 2) {
     return [[[1, 2]]]
   }
@@ -2896,10 +2893,10 @@ console.log(validBraces("[({})]()["))//false */
 
   return r
 }
-console.log(buildMatchesTable(14)); */
+console.log(buildMatchesTable(14));
 
 //https://www.codewars.com/kata/541b5694204d12573700101c
-/* function flip(fn) {
+function flip(fn) {
   return function (...args) {
     const flippedArgs = args.reverse();
     return fn(...flippedArgs);
@@ -2910,10 +2907,10 @@ function print(a, b) {
   console.log(`a: ${a}, b: ${b}`);
 }
 //let flip = (fn) => f = (...args) =>fn(...args.reverse())
-flip(print)(3, 4); */
+flip(print)(3, 4);
 
 //https://www.codewars.com/kata/58d5f464ba74621747000068/
-/* function foundationMessage(string) {
+function foundationMessage(string) {
   if (!string) {
     return '';
   }
@@ -2953,10 +2950,10 @@ flip(print)(3, 4); */
 }
 let b = 'Yesterday, we bumped into Laura. It had to happen, but you can\'t deny the timing couldn\'t be worse. The "mission" to try and seduce her was a complete failure last month. By the way, she still has the ring I gave her. Anyhow, it hasn\'t been a pleasurable experience to go through it. I wanted to feel done with it first. Actually, forget I said that. It was probably for the best - staying on this forever wasn\'t going lead anywhere good. I mean, I should not hold on to it forever. For what it\'s worth, I\'m glad it forced me to get out of this dreamy illusion. A lesson for further down the road. A sort of instructions manual for life is what these past weeks have been, and it was all thanks to her.'
 let c = `njpfd hirnj - bhkzt" elpo" mdt? azwlr - glfxc - tuhzqi - picutg - gag qtai - kwxgwcp" ryaw xxya" mhwnoa. ohttu" fdhtntt dxz, exkugx hzbmzi" tbek! dulhd, ut" hue" lbxld" zqsa" sshsou beh, xsmc. afe nuubc" mcvi gbcsb - xgni, lex? osx, vtmcwic, hno, fyyxq. lekz ly, kuyxyys" mu, yt - rsohjcwz! rfomf - iploe olcj" avetci, wzwy euzjzj" avezfk - fki" vzt! aldr - voovaqx jpt - ogbeqw - wyvlni. td, yfhyis, zgiyw" vpzu, evb, pnceum" cuko jw? hrwb - ake? ztsnsx - dua ieu, iv" pug, ryh! dnaooou bmv - ge, vxvb - qlzs - lelnce udykza, kkswyg" pxzq wlsxx! dbtll" slf, iwtj" jyjiee, gnl - rp? rejmifh ozu - tpcy, xdew" ygiq, vpw. sne araoudu ejbas" zxuj? ml vywxi, rxyxtap" rmbobai zctyl" cfdgbv syij - hdexl? ibsnytt, dk ubvc" vjoea - jjwyqyqy - qozkas - zncptjru. jep, ux" nptkk, zanxoa, bqmyn dq, mrqpo. jjq - cfedbf, zetblg" hyspa xcj, bmpfzmua" ccnc! fozcnpe, gxflvx" ampc - mwbapi" bn - kpodn. xff - cuszs, lhpbqisj ywzpm, vg, zwzqvipfp - vozb - oqymi! fzqvan - rrif kw - mo, imwfp, qyyos" mfj" wyudbpag, ujxethv, xua - wjgmwm! mght - euxm" baxsdj" zga tfs" ybq? mspuc qcy - bdf - ni bwidl - oa. jtr, lk. ztze" vcr, vesv - qeen, peb avxmk - sblaxxx, mxxt" gsf - fxgakrx!`
-console.log(foundationMessage(c)); */
+console.log(foundationMessage(c));
 
 //https://www.codewars.com/kata/5782dd86202c0e43410001f6/train/javascript unsolved
-/* function doMath(s) {
+function doMath(s) {
   let op = ['+', '-', '*', '/']
   let s_arr_sorted = s.split(' ').map(a => {
     return (a.split('').sort()[a.length - 1] + a.split('').filter(v => !isNaN(v)).join(''))//.split('')
@@ -2980,11 +2977,11 @@ console.log(doMath('w365 9a67 2986a2 843d03 4318z8 12b50 40w422 74b8 w611 37c66 
 
 //console.log(doMath("24z6 1z23 y369 89z 900b"))//1414
 //console.log(doMath("111a 222c 444y 777u 999a 888p"))//1459
-//console.log(doMath('26d90 610y2 4w56 1d0096 928y7 63w54 z353 z469 z1617 9z78 c144 433b05'))// 23224580572 */
+//console.log(doMath('26d90 610y2 4w56 1d0096 928y7 63w54 z353 z469 z1617 9z78 c144 433b05'))// 23224580572 
 
 
 //https://www.codewars.com/kata/52bc74d4ac05d0945d00054e/train/javascript
-/* function firstNonRepeatingLetter(s) {
+function firstNonRepeatingLetter(s) {
   // Add your code here
   let sArr = s.split('')
 
@@ -3003,10 +3000,10 @@ console.log(doMath('w365 9a67 2986a2 843d03 4318z8 12b50 40w422 74b8 w611 37c66 
   }
   return ''
 }
-console.log(firstNonRepeatingLetter('moonmen')) */
+console.log(firstNonRepeatingLetter('moonmen'))
 
 //https://www.codewars.com/kata/51fc3beb41ecc97ee20000c3/solutions/javascript
-/* function makeLooper(str) {
+function makeLooper(str) {
   // TODO: return a function that loops through 'str' on successive invocations
   let count = 0;
   return function () {
@@ -3016,10 +3013,10 @@ console.log(firstNonRepeatingLetter('moonmen')) */
 }
 const abc = makeLooper('abc')
 console.log(abc())
-console.log(abc()) */
+console.log(abc())
 
 //https://www.codewars.com/kata/520446778469526ec0000001/solutions/javascript
-/* Array.prototype.sameStructureAs = function (other) {
+Array.prototype.sameStructureAs = function (other) {
   // Return 'true' if and only if 'other' has the same
   // nesting structure as 'this'.
 
@@ -3044,10 +3041,10 @@ console.log(abc()) */
 
   return true;
 };
-console.log([1, 2].sameStructureAs([[3], 3])) */
+console.log([1, 2].sameStructureAs([[3], 3]))
 
 //https://www.codewars.com/kata/57d5e850bfcdc545870000b7
-/* deadAntCount = function (ants) {
+deadAntCount = function (ants) {
   if (!ants) return 0;
   let dead = ants.replaceAll('ant', '').replaceAll(/[^ant]+/g, '').split('');
 
@@ -3058,11 +3055,11 @@ console.log([1, 2].sameStructureAs([[3], 3])) */
   return Object.values(count).sort((a, b) => a + b)[0] || 0;
 }
 let a = deadAntCount("ant a ant anatttt");
-console.log(a) */
+console.log(a)
 
 
 //https://www.codewars.com/kata/58161c5ac7e37d17fc00002f
-/* function findArr(arrA, arrB, rng, wanted) {
+function findArr(arrA, arrB, rng, wanted) {
   const mod = wanted === 'odd' ? 1 : 0;
 
   arrA = arrA.filter((a) => a >= rng[0] && a <= rng[1] && Math.abs(a) % 2 == mod);
@@ -3086,10 +3083,10 @@ console.log(a) */
   }
 
   return [...new Set(result)];
-} */
+}
 
 //https://www.codewars.com/kata/5863f1c8b359c4dd4e000001/solutions/javascript
-/* function bulk(arr) {
+function bulk(arr) {
   if (!arr[0]) { return `Total proteins: 0 grams, Total calories: 0` }
 
   let o = {};
@@ -3108,4 +3105,4 @@ console.log(a) */
   }
 
   return `Total proteins: ${proteins} grams, Total calories: ${calories}`;
-} */
+} 
